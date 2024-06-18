@@ -8,10 +8,41 @@ const initialState = {
 
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Your existing form submission logic
+    const formData = new FormData();
+    formData.append("access_key", "ff1c17dd-8a36-465a-a352-b401b0599ae0");
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("message", message);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setState(initialState);
+        setTimeout(() => setSubmitted(false), 5000); // Reset the 'submitted' state after 5 seconds
+      } else {
+        console.error("Form submission failed:", result);
+        alert("An error occurred. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again later.");
+    }
   };
 
   return (
@@ -28,14 +59,13 @@ export const Contact = (props) => {
                 </p>
               </div>
               <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
+                onSubmit={handleSubmit}
                 name="contact-form"
               >
                 <input
                   type="hidden"
                   name="access_key"
-                  value="eb8428fd-3b68-4d52-a94a-4a3393e2cf6f"
+                  value="ff1c17dd-8a36-465a-a352-b401b0599ae0"
                 />
                 <div className="row">
                   <div className="col-md-6">
@@ -47,6 +77,7 @@ export const Contact = (props) => {
                         className="form-control"
                         placeholder="Name"
                         required
+                        value={name}
                         onChange={handleChange}
                       />
                       <p className="help-block text-danger"></p>
@@ -61,6 +92,7 @@ export const Contact = (props) => {
                         className="form-control"
                         placeholder="Email"
                         required
+                        value={email}
                         onChange={handleChange}
                       />
                       <p className="help-block text-danger"></p>
@@ -75,6 +107,7 @@ export const Contact = (props) => {
                     rows="4"
                     placeholder="Message"
                     required
+                    value={message}
                     onChange={handleChange}
                   ></textarea>
                   <p className="help-block text-danger"></p>
@@ -84,6 +117,13 @@ export const Contact = (props) => {
                   Send Message
                 </button>
               </form>
+              {submitted && (
+                <div className="popup">
+                  <div className="popup-content">
+                    <p>Thank you! Your message has been sent.</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">

@@ -3,7 +3,8 @@ import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
 import { Features } from "./components/features";
 import { About } from "./components/about";
-import { Projects } from "./components/projects";
+// import { Projects } from "./components/projects";
+// import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
@@ -34,20 +35,30 @@ const App = () => {
   }, [backgroundImages]);
 
   const toggleDarkMode = () => {
+    const body = document.querySelector('body');
     setIsDarkMode((prevMode) => !prevMode);
+    if (!isDarkMode) {
+      body.classList.add('dark-mode');
+      console.log('Dark mode enabled');
+    } else {
+      body.classList.remove('dark-mode');
+      console.log('Dark mode disabled');
+    }
   };
+  
 
   return (
     <div>
       {/* <button className="toggle-btn" onClick={toggleDarkMode}>
-        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+      {isDarkMode ? '🌜' : '🌞'}
       </button> */}
       <Navigation />
       <div className={`intro ${isDarkMode ? 'dark-mode' : ''}`} style={{ backgroundImage: `url(${backgroundImages[backgroundIndex]})` }} />
       <Header data={landingPageData.Header} />
       <About data={landingPageData.About} />
       <Features data={landingPageData.Features} />
-      <Projects data={landingPageData.Projects} /> 
+      {/* <Projects data={landingPageData.Projects} /> */}
+      {/* <Team data={landingPageData.Team} />  */}
       <Contact data={landingPageData.Contact} />
     </div>
   );

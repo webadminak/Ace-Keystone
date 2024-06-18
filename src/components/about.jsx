@@ -22,7 +22,7 @@ export const About = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-xs-12 col-md-6">
-            <img src="img/main-img.jpg" className="img-responsive main-img" alt="" style={{ clipPath: "url(#irregular-shape)", borderRadius: "20px" }} /> {/* Apply clip path and border radius */}
+            <img src="img/img13.jpg" className="img-responsive main-img" alt="" style={{ clipPath: "url(#irregular-shape)", borderRadius: "20px" }} /> {/* Apply clip path and border radius */}
           </div>
           <div className="col-xs-12 col-md-6">
             <div className="about-text" ref={aboutRef}>

@@ -186,12 +186,7 @@ h1 {
 
 
 
-/* App.css */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+
 
 .intro {
   height: 100vh;
@@ -207,7 +202,7 @@ body {
 }
 
 .toggle-btn {
-  position: fixed;
+  position: relative;
   top: 10px;
   right: 10px;
   padding: 8px 16px;
@@ -220,12 +215,194 @@ body {
 }
 
 .toggle-btn:hover {
+  color: white;
   background-color: #0056b3; /* Change color on hover */
 }
 
 .toggle-btn:active {
   background-color: #0056b3; /* Change color on click */
 }
+
+.toggle-btn {
+  font-weight:bold;
+  position: fixed;
+  top: 45px; /* Adjust the top position as needed */
+  right: 120px; /* Adjust the right position as needed */
+  z-index: 9999; /* Ensure the button is above other content */
+}
+
+/* Additional styling for the button */
+.toggle-btn {
+  background-color: #fff;
+  color: #333;
+  padding: 4px 5px !important;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px)  {
+  .toggle-btn {
+    border-radius: 120px;
+    padding: 5px 6px;
+  }
+}
+@media (max-width: 320px)  {
+  .toggle-btn {
+    border-radius: 120px;
+    padding: 5px 6px;
+    right: 90px;
+    top: 40px;
+  }
+}
+.toggle-btn.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Light Mode Styles */
+.intro {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.intro h1 {
+  font-size: 2.5em;
+}
+
+
+
+/* About Styles */
+.about {
+  padding: 40px 20px;
+}
+
+.about h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2em;
+}
+
+/* Features Styles */
+.features {
+  padding: 40px 20px;
+}
+
+.features h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.features ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.features li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Projects Styles */
+.projects {
+  padding: 40px 20px;
+}
+
+.projects h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.projects ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.projects li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Contact Styles */
+.contact {
+  padding: 40px 20px;
+}
+
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2em;
+}
+
+.contact form {
+  margin-top: 20px;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffcc00;
+  color: #333;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background-color: #ffaa00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -279,10 +456,10 @@ a:focus,
 
 /* Header Section */
 @keyframes changeBackground {
-  0%, 20% { background-image: url('../img/img6.jpg'); }
-  25%, 45% { background-image: url('../img/img2.jpg'); }
-  50%, 70% { background-image: url('../img/img3.jpg'); }
-  75%, 100% { background-image: url('../img/img5.jpg'); }
+  0%, 20% { background-image: url('../img/img14.jpg'); }
+  25%, 45% { background-image: url('../img/img16.jpg'); }
+  50%, 70% { background-image: url('../img/img18.jpeg'); }
+  75%, 100% { background-image: url('../img/img11.jpg'); }
   
 }
 
@@ -299,9 +476,6 @@ a:focus,
   animation: changeBackground 10s infinite;
 }
 
-/* .intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
-} */
 .intro h1 {
   font-family: "Open Sans";
   color: #fff;
@@ -348,6 +522,8 @@ header .intro-text {
   background: linear-gradient(to right, #0a59ad 0%, #010a57 100%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
+
+
 /* About Section */
 #about {
   padding: 100px 0;
@@ -375,6 +551,7 @@ header .intro-text {
   margin-left: 6px;
   list-style: none;
   padding: 0;
+  font-size: 15px;
 }
 #about .about-text li:before {
   content: "\f00c";
@@ -394,6 +571,14 @@ header .intro-text {
 #about p {
   line-height: 24px;
   margin: 30px 0;
+  text-align: justify;
+}
+
+@media (max-width:1024px) {
+  #about p {
+    text-align: justify;
+  }
+  
 }
 /* Projects Section */
 #projects {
@@ -439,7 +624,24 @@ header .intro-text {
 #projects .projects-desc {
   margin-bottom: 40px;
 }
-
+/* Team Section */
+#team {
+  padding: 100px 0;
+}
+#team h4 {
+  margin: 5px 0;
+}
+#team .team-img {
+  width: 240px;
+}
+#team .thumbnail {
+  background: transparent;
+  border: 0;
+}
+#team .thumbnail .caption {
+  padding: 10px 0 0;
+  color: #888;
+}
 /* Contact Section */
 #contact {
   padding: 40px 0 60px;
@@ -566,10 +768,33 @@ label {
   color: #7FC7D9;
   background: #fff;
 }
+
+.popup {
+  position: fixed;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.popup-content {
+  text-align: center;
+  color:black;
+}
+
+/* You can add additional styles as needed */
+
+
 /* Footer Section*/
 #footer {
   background: #0F1035;
   padding: 30px 0;
+  font-weight: bold;
+
 }
 #footer p {
   color: #888;
@@ -596,7 +821,293 @@ label {
 
 }
 
+/* Dark Mode Styles for Features Section */
+.dark-mode #features, 
+.dark-mode #features h2,
+.dark-mode #features h3 {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.dark-mode #features i.fa {
+  color: #fff;
+  background: linear-gradient(to right, #0a59ad 0%, #010a57 100%);
+  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.05);
+}
 
 
+/* Dark Mode Styles for Projects Section */
+.dark-mode #projects {
+  background: #333;
+  color: #fff;
+}
 
+.dark-mode #projects .projects-desc {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dark-mode #projects h2,
+.dark-mode #projects h3 {
+  color: #fff;
+}
+
+.dark-mode #projects .section-title h2::after {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode #projects i.fa {
+  color: #fff;
+  background: linear-gradient(to right, #0a59ad 0%, #010a57 100%);
+  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode #projects p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Dark Mode Styles for Contact Section */
+.dark-mode #contact {
+  background:black;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dark-mode #contact .section-title {
+  color: #fff;
+}
+
+.dark-mode #contact .section-title p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dark-mode #contact h2 {
+  color: #fff;
+}
+
+.dark-mode #contact .section-title h2::after {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode #contact h3 {
+  color: #fff;
+}
+
+.dark-mode #contact .text-danger {
+  color: #cc0033;
+}
+
+.dark-mode #contact .btn-custom {
+  color: #1f386e;
+  background: #fff;
+  border-color: #fff;
+}
+
+.dark-mode #contact .form-control {
+  color: #444;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.dark-mode #contact .form-control:focus {
+  border-color: #999;
+}
+
+.dark-mode #contact .contact-item span {
+  color: rgba(255, 255, 255, 1);
+}
+
+.dark-mode #contact .social i.fa {
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark-mode #contact .social i.fa:hover {
+  color: #7FC7D9;
+  background: #fff;
+}
+
+/* Dark Mode Styles for Footer Section */
+.dark-mode #footer {
+  background:#333;
+  color: white;
+  font-weight: bold;
+
+}
+
+.dark-mode #footer a {
+  color: #7FC7D9;
+}
+
+.dark-mode #footer a:hover {
+  border-bottom: 2px solid #7FC7D9;
+}
+
+/* Dark Mode Styles for About Section */
+.dark-mode #about,
+.dark-mode #about h2,
+.dark-mode #about h3 {
+  background: #333;
+  color: #fff;
+}
+
+.dark-mode #about h3,
+.dark-mode #about h2::after,
+.dark-mode #about .about-text li:before {
+  color: white;
+}
+
+.dark-mode #about img {
+  background: #fff; /* Keep background color white for the image */
+}
+
+/* Dark Mode Navigation */
+.dark-mode #menu {
+  background-color: #333 !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15) !important;
+}
+
+.dark-mode #menu a.navbar-brand {
+  color: #fff !important;
+}
+
+.dark-mode #menu.navbar-default .navbar-nav > li > a {
+  color:#ff0000 !important;
+}
+
+.dark-mode #menu.navbar-default .navbar-nav > li > a:after {
+  background: linear-gradient(to right, #7FC7D9 0%, #6cbbcf 100%) !important;
+}
+
+.dark-mode .navbar-default .navbar-toggle:hover,
+.dark-mode .navbar-default .navbar-toggle:focus {
+  background-color: #333 !important;
+  border-color: #ccc !important;
+}
+
+.dark-mode .navbar-default .navbar-toggle:hover > .icon-bar {
+  background-color: #ccc !important;
+}
+
+/* @media (max-width: 767px) {
+  .toggle-btn {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 0 px;
+    margin-right: -40px;
+    margin-bottom: 8px;
+    border-radius: 100px;
+    border: none;
+  }
+} */
+
+
+/* Small devices (phones, 576px and up) */
+@media all and (min-width: 576px) {
+  body {
+    font-size: 14px; /* Example adjustment for font size */
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media all and (min-width: 768px) {
+  body {
+    font-size: 16px; /* Example adjustment for font size */
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media all and (min-width: 992px) {
+  body {
+    font-size: 18px; /* Example adjustment for font size */
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media all and (min-width: 1200px) {
+  body {
+    font-size: 20px; /* Example adjustment for font size */
+  }
+}
+
+/* navbar.css */
+
+/* Navbar Container */
+.navbar {
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+
+.navbar-scrolled {
+  background-color: white;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  transition: margin 0.5s;
+  padding-left: 5;
+}
+
+@media (min-width:1024px){
+  .logo-container{
+    padding-left: 10;
+  }
+}
+
+@media (max-width:320px){
+  .logo-container{
+    padding-left: 10;
+  }
+}
+
+.logo {
+  margin-right: 10px;
+  transition: transform 0.5s;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  font-weight: bold;
+  font-family: SegoeUI, Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 24px; /* Default font size */
+  transition: color 0.5s;
+}
+
+.navbar-brand.scrolling {
+  color: black;
+}
+
+/* Navbar Toggle Button */
+.navbar-toggle {
+  transition: opacity 0.5s;
+}
+
+/* Navbar Links */
+.navbar-nav li a {
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-nav li a.scrolling {
+  color: red;
+}
+
+/* Navbar Toggle Button Active State (if needed) */
+.navbar-toggle.active {
+  /* Add styles for active state if needed */
+}
+
+@media (min-width:1024px){
+  .collapse.navbar-collapse {
+    padding-right: 0;
+  }
+}
+
+@media(min-width:1440px){
+  .intro h1{
+    font-size: 60px;
+  }
+}
 

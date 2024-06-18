@@ -1,20 +1,47 @@
 @media screen and (max-width: 400px) {
-  #features {
-    padding: 20px;
-    width: 111%;
-  }
+  
   #about,
   #services,
+  #features,
   #testimonials,
   #team,
   #contact,
-  #footer {
-    width: 111%;
+  #footer,
+  #projects, 
+  #page-top,
+  #menu {
+    width: 122%;
   }
+
+  
 
   #portfolio {
     width: 110%;
   }
+}
+
+@media screen and (max-width: 320px) {
+  #about,
+  #services,
+  #features,
+  #testimonials,
+  #team,
+  #contact,
+  #footer,
+  #projects, 
+  #page-top,
+  #menu{
+    width: 135%;
+  }
+  
+}
+@media screen and (max-width:320px) {
+  .intro h1{
+    padding-left: 21px;
+    font-size: 24px;
+    padding-bottom: 30;
+  }
+  
 }
 #darkmode-toggle {
   display: none;

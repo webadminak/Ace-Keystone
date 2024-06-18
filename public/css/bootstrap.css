@@ -1115,6 +1115,86 @@ figure {
 img {
   vertical-align: middle;
 }
+img {
+  page-break-inside: avoid;
+  max-width: 100% !important;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 768px) {
+  img {
+      width: 70px;
+      height: 50px;
+      margin-right: 5px;
+  }
+  .logo-container {
+    padding-right: 20px;
+  }
+}
+
+/* @media only screen and (max-width: 480px) {
+  img {
+      width: 50px;
+      height: 36px;
+      margin-right: 3px;
+  }
+} */
+
+@media only screen and (max-width: 320px) {
+  img {
+    width: 50px;
+    height: 36px;
+    margin-right: 3px;
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .intro h1 {
+      font-size: 48px;
+      margin-bottom: 5px !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .intro h1 {
+      font-size: 40px ;
+      margin-bottom: 50px;
+      display: flex;
+      align-items: center;
+      padding-left: 85;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .intro p {
+      font-size: 22px;
+      margin-bottom: 50px;
+      display: flex;
+      align-items: center;
+      padding-left: 10;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  .intro h1 {
+      font-size: 28px;
+      margin-bottom: 3px !important;
+  }
+}
+
+@media (max-width: 400px)  {
+  .intro {
+    
+    width: 135% !important;
+    
+  }
+}
+
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,
@@ -1161,7 +1241,7 @@ hr {
 }
 .sr-only-focusable:active,
 .sr-only-focusable:focus {
-  position: static;
+  position: absolute;
   width: auto;
   height: auto;
   margin: 0;
@@ -1592,6 +1672,11 @@ pre code {
     width: 750px;
   }
 }
+@media (min-width: 1024px) {
+  .container {
+    width: 1400px;
+  }
+}
 @media (min-width: 992px) {
   .container {
     width: 970px;
@@ -1963,7 +2048,7 @@ pre code {
     width: 41.66666667%;
   }
   .col-md-4 {
-    width: 33.33333333%;
+    width: 50%;
   }
   .col-md-3 {
     width: 25%;
@@ -2451,7 +2536,7 @@ table th[class*="col-"] {
     margin-bottom: 15px;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -4181,6 +4266,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
 }
+
+
+
+
+
+
+
 .navbar-collapse {
   padding-right: 15px;
   padding-left: 15px;
@@ -4238,17 +4330,32 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .container-fluid > .navbar-header,
   .container > .navbar-collapse,
   .container-fluid > .navbar-collapse {
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 0px;
+    margin-left: 0px;
   }
 }
+
+@media (max-width: 1024px) {
+  .container > .navbar-header,
+  .container-fluid > .navbar-header,
+  .container > .navbar-collapse,
+  .container-fluid > .navbar-collapse {
+    margin-right: 220px;
+    margin-left: 180px;
+  }
+}
+
+
+
+
+
 .navbar-static-top {
   z-index: 1000;
   border-width: 0 0 1px;
 }
 @media (min-width: 768px) {
   .navbar-static-top {
-    border-radius: 0;
+    border-radius: 10;
   }
 }
 .navbar-fixed-top,
@@ -4293,12 +4400,62 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-left: -15px;
   }
 }
+
+/* @media (min-width: 1024px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    margin-left: 20px;
+  }
+} */
+
+@media (max-width: 768px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 18px !important;
+
+  }
+}
+
+@media (max-width: 425px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 15px !important;
+    padding-top: 20px;
+    
+  }
+}
+@media (max-width: 320px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 23px !important;
+    padding-top: 20px;
+    position: absolute;
+    right: 100;
+    left: 50;
+    top: 12;
+    line-height: 1;
+    
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .intro p {
+      font-size: 22px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .intro p {
+      font-size: 18px !important;
+  }
+}
+
 .navbar-toggle {
   position: relative;
   float: right;
   padding: 9px 10px;
-  margin-top: 8px;
-  margin-right: 15px;
+  margin-top: -55px;
+  margin-right: -40px;
   margin-bottom: 8px;
   background-color: transparent;
   background-image: none;
@@ -4311,8 +4468,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle .icon-bar {
   display: block;
   width: 22px;
-  height: 2px;
-  border-radius: 1px;
+  height: 3px;
+  border-radius: 0px;
 }
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
@@ -4322,6 +4479,57 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: none;
   }
 }
+
+.navbar-toggle {
+  /* Your existing styles */
+  font-size: 16px;
+  padding: 10px 15px;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-toggle {
+      font-size: 14px;
+      padding: 8px 12px;
+      margin-right: 5px;
+  }
+}
+
+/* @media only screen and (max-width: 425px) {
+  .navbar-toggle {
+      font-size: 12px !important;
+      padding: 6px 10px !important;
+      margin-right: -30px !important;
+      top: 2;
+  }
+} */
+
+@media only screen and (max-width: 400px) {
+  .navbar-toggle {
+      font-size: 10px;
+      padding: 4px 8px;
+      margin-right: -100px;
+  }
+
+  .icon-bar {
+      display: inline-block; /* Ensure the icon bars are displayed */
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .navbar-toggle {
+    font-size: 10px;
+    padding: 6px 8px;
+    margin-right: -125px;
+    top: 22;
+}
+}
+
+
+
+
+
+
 .navbar-nav {
   margin: 7.5px -15px;
 }
@@ -4366,6 +4574,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     padding-bottom: 15px;
   }
 }
+
+@media (min-width: 1024px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+     margin-left: -15px;
+  }
+}
+
 .navbar-form {
   padding: 10px 15px;
   margin-top: 8px;
@@ -6778,4 +6994,71 @@ button.close {
 .page-container {
   position: relative;
   min-height: 100vh;
+}
+
+/* navbar.css */
+
+/* Navbar Container */
+.navbar {
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+
+.navbar-scrolled {
+  background-color: white;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  transition: margin 0.5s;
+}
+
+.logo {
+  margin-right: 10px;
+  transition: transform 0.5s;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  font-weight: bold;
+  font-family: SegoeUI, Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 24px; /* Default font size */
+  transition: color 0.5s;
+}
+
+.navbar-brand.scrolling {
+  color: black;
+}
+
+/* Navbar Toggle Button */
+.navbar-toggle {
+  transition: opacity 0.5s;
+}
+
+/* Navbar Links */
+.navbar-nav li a {
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-nav li a.scrolling {
+  color: red;
+}
+
+/* Navbar Toggle Button Active State (if needed) */
+.navbar-toggle.active {
+  /* Add styles for active state if needed */
+}
+
+/* Collapsed Navbar (if needed) */
+.collapse.navbar-collapse {
+  /* Add styles for collapsed navbar if needed */
+}
+
+
+.page-scroll > a{
+  font-weight: bold;
 }
