@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export const Header = (props) => {
+  const [backgroundImage, setBackgroundImage] = useState('');
+
   useEffect(() => {
     const images = [
       '../img/img14.jpg',
@@ -9,29 +11,41 @@ export const Header = (props) => {
       '../img/img11.jpg'
     ];
 
-    images.forEach((image) => {
-      const img = new Image();
-      img.src = image;
-    });
+    const changeImage = () => {
+      const randomImage = images[Math.floor(Math.random() * images.length)];
+      setBackgroundImage(`url(${randomImage})`);
+    };
+
+    // Change image immediately when the component mounts
+    changeImage();
+
+    // Set up an interval to change the image every 5 seconds
+    const intervalId = setInterval(changeImage, 2000); // Change 5000 to any number of milliseconds you prefer
+
+    // Clear the interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
+
+  useEffect(() => {
+    document.querySelector('.image-background').style.backgroundImage = backgroundImage;
+  }, [backgroundImage]);
 
   return (
     <header id="header">
       <div className="intro">
+        <div className="image-background" />
+        <div className="overlay" />
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-md-offset-2 intro-text">
               <h1>
-                {props.data ? props.data.title : "Loading"}
+                {props.data?.title || "Loading"}
                 <span></span>
               </h1>
-              <p>{props.data ? props.data.paragraph : "Loading"}</p>
-              <a
-                href="#about"
-                className="btn btn-custom btn-lg page-scroll"
-              >
-                Learn More
-              </a>{" "}
+              <p>{props.data?.paragraph || "Loading"}</p>
+              <a href="#about" className="btn btn-custom btn-lg page-scroll">
+                Our Product
+              </a>
             </div>
           </div>
         </div>

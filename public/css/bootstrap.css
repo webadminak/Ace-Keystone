@@ -678,7 +678,7 @@ th {
 .glyphicon-circle-arrow-right:before {
   content: "\e131";
 }
-.glyphicon-circle-arrow-left:before {
+.glyphicon-circle-ar-left:before {
   content: "\e132";
 }
 .glyphicon-circle-arrow-up:before {
@@ -1132,13 +1132,27 @@ img {
   }
 }
 
-/* @media only screen and (max-width: 480px) {
+@media (min-width:350px) and (max-width: 425px) {
   img {
       width: 50px;
       height: 36px;
       margin-right: 3px;
+      right: 250;
+      position: relative;
+      top:20;
   }
-} */
+}
+
+@media only screen and (max-width: 430px) {
+  img {
+      width: 78px;
+      height: 60px;
+      margin-right: 3px;
+      right: 245;
+      position: relative;
+      top:-5;
+  }
+}
 
 @media only screen and (max-width: 320px) {
   img {
@@ -1187,7 +1201,7 @@ img {
   }
 }
 
-@media (max-width: 400px)  {
+@media (max-width: 350px)  {
   .intro {
     
     width: 135% !important;
@@ -4416,12 +4430,40 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 
-@media (max-width: 425px) {
+@media (min-width:350px) and (max-width: 425px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     font-size: 15px !important;
     padding-top: 20px;
     
+  }
+}
+@media (max-width: 430px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 15px !important;
+    padding-top: 20px;
+    
+  }
+}
+@media (min-width:350px) and (max-width: 425px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 20px !important;
+    position:relative;
+    right: 200;
+    bottom: 45;
+    line-height: 1;
+  }
+}
+@media (max-width: 430px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 20px !important;
+    position:relative;
+    right: 160;
+    bottom: 83;
+    line-height: 1;
   }
 }
 @media (max-width: 320px) {
@@ -4446,7 +4488,24 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 @media only screen and (max-width: 480px) {
   .intro p {
-      font-size: 18px !important;
+      font-size: 15px !important;
+      right: 10;
+      position: relative;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .intro p {
+      font-size: 13px !important;
+      right: 89;
+      position: relative;
+      width: 300;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .intro p {
+      font-size: 15px !important;
+      right: 70;
+      position: relative;
   }
 }
 
@@ -4495,20 +4554,31 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 
-/* @media only screen and (max-width: 425px) {
+@media (min-width:350px) and (max-width: 425px) {
   .navbar-toggle {
       font-size: 12px !important;
       padding: 6px 10px !important;
       margin-right: -30px !important;
-      top: 2;
+      left: 150;
+      bottom: 10;
   }
-} */
+}
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 430px) {
+  .navbar-toggle {
+      font-size: 12px !important;
+      padding: 6px 10px !important;
+      margin-right: -30px !important;
+      left: 300;
+      bottom: 30;
+  }
+}
+
+@media only screen and (max-width: 350px) {
   .navbar-toggle {
       font-size: 10px;
       padding: 4px 8px;
-      margin-right: -100px;
+      margin-right: -90px;
   }
 
   .icon-bar {
@@ -4579,6 +4649,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
      margin-left: -15px;
+     padding-left: 150;
+     bottom: 60px;
+     position: relative;
   }
 }
 

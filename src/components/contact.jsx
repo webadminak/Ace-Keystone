@@ -20,7 +20,7 @@ export const Contact = (props) => {
 
     // Your existing form submission logic
     const formData = new FormData();
-    formData.append("access_key", "ff1c17dd-8a36-465a-a352-b401b0599ae0");
+    formData.append("access_key", "8d92d4ce-f4c2-4a79-bfe6-dc0ac009027f");
     formData.append("name", name);
     formData.append("email", email);
     formData.append("message", message);
@@ -65,7 +65,7 @@ export const Contact = (props) => {
                 <input
                   type="hidden"
                   name="access_key"
-                  value="ff1c17dd-8a36-465a-a352-b401b0599ae0"
+                  value="8d92d4ce-f4c2-4a79-bfe6-dc0ac009027f"
                 />
                 <div className="row">
                   <div className="col-md-6">
@@ -144,12 +144,30 @@ export const Contact = (props) => {
                 {props.data ? props.data.phone : "loading"}
               </p>
             </div>
+
             <div className="contact-item">
               <p>
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
                 </span>{" "}
                 {props.data ? props.data.email : "loading"}
+              </p>
+            </div>
+            <div className="contact-item">
+              <p>
+                <span>
+                  <i className="fa fa-linkedin"></i>{" "}
+                  <a
+                    href="https://www.linkedin.com/company/ak-tech-group/posts/?feedView=all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                    onMouseEnter={(e) => { e.target.style.color = 'white'; }}
+                    onMouseLeave={(e) => { e.target.style.color = 'inherit'; }}
+                  >
+                    LinkedIn
+                  </a>
+                </span>
               </p>
             </div>
           </div>

@@ -21,6 +21,13 @@ h2 {
   font-size: 36px;
   color: #333;
 }
+#features h2{
+  top:60;
+}
+#team b{
+  right: 20;
+  position: relative;
+}
 h3 {
   font-size: 20px;
   font-weight: 600;
@@ -247,7 +254,15 @@ h1 {
     padding: 5px 6px;
   }
 }
-@media (max-width: 320px)  {
+@media (min-width:350px) and (max-width: 425px)  {
+  .toggle-btn {
+    border-radius: 120px;
+    padding: 5px 6px;
+    right: 90px;
+    top: 40px;
+  }
+}
+@media (max-width: 430px)  {
   .toggle-btn {
     border-radius: 120px;
     padding: 5px 6px;
@@ -397,8 +412,43 @@ body {
 
 
 
+@media (min-width:350px) and (max-width:425px) {
+  .btn-custom{
+    font-size: 24px;
+    right: 70;
+    position: relative;
+  }
+  
+}
+@media (min-width:350px) and (max-width:425px) {
+  #contact .btn-custom{
+    font-size: 24px;
+    right: 0;
+    position: relative;
+  }
+  
+}
+@media screen and (max-width:430px) {
+  .btn-custom{
+    font-size: 24px;
+    right: 0;
+    position: relative;
+  }
+  #contact .btn-custom{
+    font-size: 24px;
+    right: 0;
+    position: relative;
+  }
+  
+}
 
-
+@media screen and (max-width:350px) {
+  .btn-custom{
+    font-size: 24px;
+    right: 84;
+    position: relative;
+  }
+}
 
 
 
@@ -537,6 +587,7 @@ header .intro-text {
   margin-bottom: 15px;
   padding-bottom: 15px;
 }
+
 #about h2::after {
   position: absolute;
   content: "";
@@ -561,6 +612,7 @@ header .intro-text {
   font-weight: 300;
   padding-right: 8px;
 }
+  
 #about img {
   width: 620px;
   margin-top: 10px;
@@ -626,6 +678,9 @@ header .intro-text {
 }
 /* Team Section */
 #team {
+  padding: 50px 0;
+}
+#feature{
   padding: 100px 0;
 }
 #team h4 {
@@ -1055,9 +1110,16 @@ label {
   }
 }
 
-@media (max-width:320px){
+@media (min-width:350px) and (max-width:425px){
   .logo-container{
     padding-left: 10;
+    width: 200;
+  }
+}
+@media (max-width:430px){
+  .logo-container{
+    padding-left: 10;
+    width: 200;
   }
 }
 

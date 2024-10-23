@@ -34,25 +34,36 @@
   ],
   "Team": [
     {
-      "img": "img/team/01.jpg",
-      "name": "Karthik Thangaraj",
-      "job": "Director"
+      "img": "img/team/Abishek-photo.jpg",
+      "name": "Abishek",
+      "job": "Software Developer"
     },
     {
-      "img": "img/team/03.jpg",
-      "name": "Abinaya",
-      "job": "CEO"
-    },
-    {
-      "img": "img/team/02.jpg",
-      "name": "Kavikumaran",
-      "job": "Project Manager"
-    },
-    {
-      "img": "img/team/04.jpg",
-      "name": "Kousalya",
+      "img": "img/team/Green-photo.jpg",
+      "name": "Pachamuthu",
       "job": "Data Admin"
+    },
+    {
+      "img": "img/team/Karthik.jpg",
+      "name": "Karthick",
+      "job": "Machine Learning Engineer"
+    },
+    {
+      "img": "img/team/Semil-photo.jpeg",
+      "name": "Semil",
+      "job": "Junior Machiner Learning Engineer"
+    },
+    {
+      "img": "img/team/Image.jpeg",
+      "name": "Semil",
+      "job": "Junior Machiner Learning Engineer"
+    },
+    {
+      "img": "img/team/Abinaya.jpg",
+      "name": "Abinaya",
+      "job": "Founder"
     }
+    
   ],
   "Contact": {
     "address": "307, 3rd Floor, PSG - Science and Technology Entrepreneurical Park(PSG-STEP),E8 Block, PSG iTECH Campus, Neelambur, Coimbatore - 641 062",
@@ -60,7 +71,7 @@
     "email": "info@ak-tech.in",
     "facebook": "fb.com",
     "twitter": "twitter.com",
-    "youtube": "youtube.com"
+    "linkedin": "https://www.linkedin.com/company/ak-tech-group/posts/?feedView=all"
   },
   "Features": [
     {

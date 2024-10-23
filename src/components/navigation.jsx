@@ -21,12 +21,12 @@ export const Navigation = (props) => {
   return (
     <nav
       id="menu"
-      className={`navbar navbar-default navbar-fixed-top ${
-        scrolling ? "navbar-scrolled" : ""
-      }`}
+      className={`navbar navbar-default navbar-fixed-top ${scrolling ? "navbar-scrolled" : ""
+        }`}
       style={{
         backgroundColor: scrolling ? "black" : "transparent",
         transition: "background-color 0.5s",
+        height:"130px"
       }}
     >
       <div className="container">
@@ -39,7 +39,9 @@ export const Navigation = (props) => {
               height="64"
               className="logo"
             />
-            <a
+            
+          </div>
+          <a
               className="navbar-brand page-scroll"
               href="#page-top"
               style={{
@@ -51,8 +53,6 @@ export const Navigation = (props) => {
             >
               Adept Knowledge Technologies
             </a>
-          </div>
-
           <button
             type="button"
             className={`navbar-toggle ${isMobileMenuOpen ? "active" : ""}`}
@@ -65,14 +65,13 @@ export const Navigation = (props) => {
           </button>
         </div>
         <div
-          className={`collapse navbar-collapse ${
-            isMobileMenuOpen ? "show" : ""
-          }`}
+          className={`collapse navbar-collapse ${isMobileMenuOpen ? "show" : ""
+            }`}
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
             <li>
-            <a
+              <a
                 href="#about"
                 className="page-scroll"
                 style={{
@@ -84,7 +83,7 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-            <a
+              <a
                 href="#features"
                 className="page-scroll"
                 style={{
@@ -96,8 +95,8 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-            {/* <a
-                href="#projects"
+              <a
+                href="#team"
                 className="page-scroll"
                 style={{
                   fontWeight: "bold",
@@ -105,11 +104,11 @@ export const Navigation = (props) => {
                   transition: "color 0.5s",
                 }}
               >
-                Projects
-              </a> */}
+                Our Team
+              </a>
             </li>
             <li>
-            <a
+              <a
                 href="#contact"
                 className="page-scroll"
                 style={{
@@ -122,6 +121,7 @@ export const Navigation = (props) => {
               </a>
             </li>
           </ul>
+          
         </div>
       </div>
     </nav>

@@ -18,14 +18,15 @@ export const About = (props) => {
   }, []);
 
   return (
-    <div id="about">
+    <div id="about" className="d-flex justify-content-center align-items-center" style={{ height: "75vh" }}>
       <div className="container">
         <div className="row">
-          <div className="col-xs-12 col-md-6">
-            <img src="img/img13.jpg" className="img-responsive main-img" alt="" style={{ clipPath: "url(#irregular-shape)", borderRadius: "20px" }} /> {/* Apply clip path and border radius */}
-          </div>
-          <div className="col-xs-12 col-md-6">
-            <div className="about-text" ref={aboutRef}>
+          <div className="col-xs-12">
+            <div
+              className="about-text"
+              ref={aboutRef}
+              style={{ maxWidth: '800px', textAlign: 'left', margin: '0 auto' }}
+            >
               <h2>About Us</h2>
               <p>{props.data ? props.data.paragraph : "loading..."}</p>
               <h3>Why Choose Us?</h3>
@@ -43,7 +44,7 @@ export const About = (props) => {
                   <ul>
                     {props.data
                       ? props.data.Why2.map((d, i) => (
-                          <li key={`${d}-${i}`}> {d}</li>
+                          <li key={`${d}-${i}`}>{d}</li>
                         ))
                       : "loading"}
                   </ul>

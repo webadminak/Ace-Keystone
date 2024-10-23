@@ -1,4 +1,4 @@
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 350px) {
   
   #about,
   #services,
@@ -10,7 +10,7 @@
   #projects, 
   #page-top,
   #menu {
-    width: 122%;
+    width: 100%;
   }
 
   
@@ -20,7 +20,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media (min-width:350px) and (max-width: 425px) {
   #about,
   #services,
   #features,
@@ -31,18 +31,99 @@
   #projects, 
   #page-top,
   #menu{
-    width: 135%;
+    width: 100%;
   }
   
 }
-@media screen and (max-width:320px) {
+@media (min-width:350px) and (max-width: 425px) {
+
+  #menu{
+    width: 100%;
+    position: fixed;
+  }
+  
+}
+@media (min-width:350px) and (max-width:425px) {
   .intro h1{
-    padding-left: 21px;
-    font-size: 24px;
-    padding-bottom: 30;
+    font-size: 54px;
+    right: 100;
+    position: relative;
+    bottom: 20;
   }
   
 }
+@media (min-width:350px) and (max-width:425px) {
+  #features{
+    background: white;
+
+  }
+  
+}
+
+/* //// */
+
+@media (min-width: 426px) and (max-width: 430px) {
+  #about,
+  #services,
+  #features,
+  #testimonials,
+  #team,
+  #contact,
+  #footer,
+  #projects, 
+  #page-top,
+  #menu{
+    width: 100%;
+  }
+  
+}
+@media (min-width: 426px)  and (max-width: 430px) {
+
+  #menu{
+    width: 100%;
+    position: fixed;
+  }
+  
+}
+@media (min-width: 426px)  and (max-width:430px) {
+  .intro h1{
+    font-size: 39px;
+    right: 50;
+    position: relative;
+    bottom:40px;
+  }
+  
+}
+@media (min-width: 426px)  and (max-width:430px) {
+  #features{
+    background: white;
+    position: relative;
+    top: 200px;
+
+  }
+  #team{
+    position: relative;
+    top: 200px;
+
+  }
+  #contact{
+    position: relative;
+    top: 200px;
+
+  }
+  #footer{
+    position: relative;
+    top: 200px;
+
+  }
+}
+
+
+
+
+
+
+
 #darkmode-toggle {
   display: none;
 }
@@ -65,6 +146,7 @@
 #darkmode-toggle + label:hover {
   background-color: #e9ecef;
 }
+
 
 .sun,
 .moon {
@@ -94,3 +176,222 @@
   background-color: var(--foreground-color);
   color: var(--secondary-text-color);
 }
+
+.section-white {
+	background: #fff;
+	padding: 70px 0;
+}
+
+.team-item{
+	background: #f4f5f6;
+	text-align:center;
+	margin:20px 0;
+	padding:50px 20px 40px 20px;
+	border-radius: 8px 8px;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+.team-item:hover{
+	background: #3956de;
+	color: white;
+}
+
+.team-item h3{
+	margin:20px 0 10px 0!important;
+	color:#454545;
+	font-size:24px;
+	font-weight: 700;
+	text-transform:uppercase;
+	transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	-webkit-transition: all .25s ease-in-out;
+}
+
+.section-subtitle {
+	white-space: pre-line;
+ }
+
+.team-item:hover h3{
+	color:#ddd;
+}
+
+.team-info {
+	display: block;
+	margin-bottom:0;
+}
+
+.team-info p{
+	color:#acacac;
+	font-style:italic;
+}
+
+.team-info::after {
+    background: #008aff;
+    background: -webkit-linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
+    background: -o-linear-gradient(bottom right, #6B02FF, #985BEF);
+    background: -moz-linear-gradient(bottom right, #008aff, #1ad2fd);
+    background: linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    width: 50px;
+    height: 3px; 
+    bottom: 6px;
+    position: relative;
+}
+
+.team-img{
+	width: 250px;
+	padding: 6px 6px;
+    background-color: #dedede;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+ul.team-icon {
+	margin-top: 25px;
+}
+
+ul.team-icon li{
+	display: inline-block;
+	margin:0 3px;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+ul.team-icon li a{
+	margin: 0;
+	display: inline-block;
+	padding: 8px 8px;
+	width: 34px;
+	height: 34px;
+	font-size: 18px;
+	line-height: 18px;
+	background-color: #fff;
+	border-radius: 50%;
+	color:#fff;
+}
+
+ul.team-icon li a.twitter{
+	background-color: #4099ff;
+}
+
+ul.team-icon li a.pinterest{
+	background-color: #C92228;
+}
+
+ul.team-icon li a.facebook{
+	background-color: #3b5998;
+}
+
+ul.team-icon li a.dribble{
+	background-color: #ea4c89;
+}
+
+.team-icon li a:hover{
+	color:#dedede;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+.headings{
+  font-size: 36px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 45px;
+  padding-top: 30px;
+  display: grid;
+  position: relative;
+}
+
+#header {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro {
+  position: relative;
+  z-index: 3; /* Ensure text and content is above everything */
+}
+
+.image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1; /* Background should be at the bottom */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+  z-index: 2; /* Overlay should be above the background but below the text */
+}
+
+.intro-text {
+  position: relative;
+  z-index: 3; /* Make sure the text is above the overlay */
+  color: white; /* Ensure text is visible against the background */
+  text-align: center;
+}
+
+/* iPhone SE, iPhone 8, iPhone 7 */
+@media only screen and (max-width: 375px) {
+  .about-text {
+    font-size: 16px; /* Example adjustment */
+    padding: 10px; /* Example adjustment */
+  }
+}
+
+/* iPhone 12 Mini, iPhone 13 Mini */
+@media only screen and (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+  .about-text {
+    font-size: 17px;
+  }
+}
+
+/* iPhone 11, iPhone XR */
+@media only screen and (max-width: 414px) {
+  .about-text {
+    font-size: 18px; /* Adjust font size */
+  }
+}
+
+/* iPhone 12, iPhone 13, iPhone 14 */
+@media only screen and (max-width: 390px) {
+  .about-text {
+    font-size: 18px;
+  }
+
+  .list-style {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align */
+  }
+}
+
+/* iPhone 14 Pro Max and larger screens */
+@media only screen and (max-width: 430px) {
+  .about-text {
+    font-size: 18px; /* Adjust as needed */
+  }
+}
+
+
