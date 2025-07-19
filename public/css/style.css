@@ -4,7 +4,7 @@ html {
   src: url('../fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
-  color: #777;
+  color: #ffffff;
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
@@ -27,6 +27,7 @@ h2 {
 #team b{
   right: 20;
   position: relative;
+  text-align: center;
 }
 h3 {
   font-size: 20px;
@@ -45,6 +46,12 @@ h5 {
 }
 p {
   font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+p:hover{
+  color: white;
+  font-weight: 500;
 }
 p.intro {
   margin: 12px 0 0;
@@ -55,10 +62,10 @@ a {
   font-weight: 400;
 }
 a:hover,
-a:focus {
+/* a:focus {
   text-decoration: none;
-  color: #608dfd;
-}
+  color: rgb(0, 0, 0);
+} */
 ul,
 ol {
   list-style: none;
@@ -99,7 +106,7 @@ h1 {
 
 /* Navigation */
 #menu {
-  padding: 15px;
+  padding: 5px;
   transition: all 0.8s;
 }
 #menu.navbar-default {
@@ -435,7 +442,7 @@ body {
     position: relative;
   }
   #contact .btn-custom{
-    font-size: 24px;
+    font-size: 13px;
     right: 0;
     position: relative;
   }
@@ -492,7 +499,7 @@ body {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-a:focus,
+
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -529,7 +536,7 @@ a:focus,
 .intro h1 {
   font-family: "Open Sans";
   color: #fff;
-  font-size: 82px;
+  font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
@@ -678,7 +685,8 @@ header .intro-text {
 }
 /* Team Section */
 #team {
-  padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 0px;
 }
 #feature{
   padding: 100px 0;
@@ -686,9 +694,7 @@ header .intro-text {
 #team h4 {
   margin: 5px 0;
 }
-#team .team-img {
-  width: 240px;
-}
+
 #team .thumbnail {
   background: transparent;
   border: 0;
@@ -697,12 +703,82 @@ header .intro-text {
   padding: 10px 0 0;
   color: #888;
 }
+
+
+#team .team-img {
+  width: 100%; /* Default to 100% on mobile for responsiveness */
+  max-width: 240px; /* Limit the max width for the images */
+  height: auto; /* Ensure the image keeps its aspect ratio */
+  margin-bottom: 20px; /* Add some margin below images for spacing */
+}
+
+/* Small devices (portrait tablets and below) */
+@media (max-width: 576px) {
+  #team .team-img {
+    width: 80%; /* Make images smaller on smaller screens */
+    max-width: 200px; /* Further reduce max width */
+  }
+}
+
+/* Medium devices (landscape tablets and small laptops) */
+@media (min-width: 577px) and (max-width: 768px) {
+  #team .team-img {
+    width: 70%; /* Slightly smaller on medium screens */
+    max-width: 220px; /* Adjust max width */
+  }
+}
+
+/* Large devices (laptops and desktops) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  #team .team-img {
+    width: 240px; /* Standard size for laptops */
+    max-width: 240px;
+  }
+}
+
+/* Extra Large devices (large desktops) */
+@media (min-width: 1201px) and (max-width: 1800px) {
+  #team .team-img {
+    width: 250px; /* Slightly larger images for larger desktops */
+    max-width: 250px;
+  }
+}
+
+/* Ultra Large devices (4K screens and large monitors) */
+@media (min-width: 1801px) {
+  #team .team-img {
+    width: 300px; /* Larger images for 4K and large monitors */
+    max-width: 300px;
+  }
+}
+
+
+
+
+@media (min-width: 450px) {
+  #contact {
+    height: 1200px;
+  }
+}
+@media (max-width: 1440px) {
+  #contact {
+    top: 140px !important;
+
+  }
+}
+
+
 /* Contact Section */
 #contact {
   padding: 40px 0 60px;
   background: linear-gradient(to right, #365486 0%, #202e47 100%);
   color: rgba(255, 255, 255, 0.75);
+  top: 165px;
+  position: relative;
+  height: 700px;
 }
+
+
 #contact .section-title {
   margin-bottom: 40px;
 }
@@ -790,6 +866,8 @@ label {
 }
 #contact .contact-item {
   margin: 20px 0;
+  position: relative;
+  bottom: 70px;
 }
 #contact .contact-item span {
   color: rgba(255, 255, 255, 1);
@@ -824,22 +902,76 @@ label {
   background: #fff;
 }
 
+/* Vibrant circular gradient background */
+.page-background {
+  background: radial-gradient(circle at top left, #0f1035 0%, #1b1b3a 40%, #3a3a5a 100%);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+/* Optional floating circles */
+.page-background::before,
+.page-background::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: float 20s infinite;
+}
+
+.page-background::before {
+  width: 400px;
+  height: 400px;
+  background: #ffffff;
+  top: 10%;
+  left: 5%;
+}
+
+.page-background::after {
+  width: 300px;
+  height: 300px;
+  background: #ccccff;
+  bottom: 10%;
+  right: 10%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+
+
+
+
+
+
 .popup {
   position: fixed;
-  top: 72%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px); /* Blurs the background */
+  z-index: 1000; /* Ensures it appears above other elements */
 }
 
 .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  color:black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 /* You can add additional styles as needed */
 
@@ -852,7 +984,7 @@ label {
 
 }
 #footer p {
-  color: #888;
+  color: #ffffff;
   font-size: 14px;
 }
 #footer a {
@@ -861,6 +993,8 @@ label {
 #footer a:hover {
   border-bottom: 2px solid #7FC7D9;
 }
+
+
 
 @media (max-width: 768px) {
   #about img {
@@ -1080,7 +1214,7 @@ label {
 /* Extra large devices (large desktops, 1200px and up) */
 @media all and (min-width: 1200px) {
   body {
-    font-size: 20px; /* Example adjustment for font size */
+    font-size: 22px; /* Example adjustment for font size */
   }
 }
 

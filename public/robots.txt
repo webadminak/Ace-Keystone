@@ -1,0 +1,10 @@
+User-agent:*
+Allow: /teams/
+Allow: /about/
+Allow: /services/
+Allow: /ourtech/
+Allow: /contact/
+Allow: /careers/
+Allow: /
+
+Sitemap : https://www.ak-tech.in/sitemap.xml

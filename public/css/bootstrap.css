@@ -1075,6 +1075,8 @@ th {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+          font-size: 15px;
+          margin-left: 3px;
 }
 html {
   font-size: 10px;
@@ -1101,12 +1103,11 @@ a {
   text-decoration: none;
 }
 a:hover,
-a:focus {
+/* a:focus {
   color: #23527c;
   text-decoration: underline;
-}
+} */
 a:focus {
-  outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 figure {
@@ -1117,7 +1118,7 @@ img {
 }
 img {
   page-break-inside: avoid;
-  max-width: 100% !important;
+  /* max-width: 100% !important; */
   vertical-align: middle;
 }
 
@@ -1148,7 +1149,7 @@ img {
       width: 78px;
       height: 60px;
       margin-right: 3px;
-      right: 245;
+      right: 0;
       position: relative;
       top:-5;
   }
@@ -1179,7 +1180,6 @@ img {
       margin-bottom: 50px;
       display: flex;
       align-items: center;
-      padding-left: 85;
   }
 }
 
@@ -1192,6 +1192,7 @@ img {
       padding-left: 10;
   }
 }
+
 
 
 @media only screen and (max-width: 480px) {
@@ -4482,7 +4483,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 @media only screen and (max-width: 768px) {
   .intro p {
-      font-size: 22px !important;
+      font-size: 18px !important;
   }
 }
 
@@ -4504,7 +4505,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media only screen and (max-width: 375px) {
   .intro p {
       font-size: 15px !important;
-      right: 70;
+      right: 0;
       position: relative;
   }
 }

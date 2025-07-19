@@ -1,0 +1,482 @@
+.job-detail {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0px 20px 0px 20px;
+    margin: 0;
+    top: 170px;
+    position: relative;
+}
+
+.hero-banner {
+    background-color: #f5f7fa;
+    padding: 60px 40px 80px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero-banner h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #0f1035;
+}
+
+.hero-banner h2 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.apply-btn {
+    background-color: #e9963f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    top: 20px;
+    margin-left: 0;         /* Ensure no auto-centering */
+    display: inline-block;  /* Avoid block-level centering */
+    text-align: left;  
+}
+
+.apply-btn1 {
+    background-color: #e9963f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .apply-btn {
+        top: -10px;
+    }
+}
+
+.apply-btn:hover {
+    background-color: #e9963f;
+}
+
+.job-content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 80px 180px 20px 180px;
+}
+
+.job-description {
+    flex: 2;
+    padding: 50px;
+}
+
+.job-description h3 {
+    font-size: 24px;
+    color: #0f1035;
+    margin-bottom: 20px;
+}
+
+.job-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.job-meta {
+    flex: 1;
+    background-color: #fafafa;
+    border-left: 3px solid #e9963f;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    top: 0px;
+    max-height: 180px;
+}
+
+.job-meta2{
+    flex: 1;
+    background-color: #fafafa;
+    border-left: 3px solid #e9963f;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    top: 70px;
+    color: #000;
+    max-width: 400px;
+}
+
+.job-meta p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #444;
+    top: 40px;
+    position: static;
+}
+
+.job-meta strong {
+    display: inline-block;
+    width: 120px;
+    color: #0f1035;
+    font-size: 16px;
+}
+
+.job-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.my-confirm-button {
+    font-size: 16px !important;
+    padding: 10px 20px; /* Optional: bigger button */
+}
+
+
+/* ===== New Styles for Overlay Apply Form ===== */
+
+/* ===== Enhanced Apply Form Overlay ===== */
+
+.overlay-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 750px;
+    overflow-y: auto;
+    max-height: 95vh;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+}
+
+.close-btn {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.form-container h2 {
+    font-size: 28px;
+    color: #0f1035;
+    margin-bottom: 25px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.overlay-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 30px;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #000;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+    max-height: 160px;
+}
+
+form label {
+    font-weight: 600;
+    color: #000;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    min-height: 2em;
+}
+
+.required-asterisk {
+    color: red;
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+form small.note {
+    display: block;
+    font-size: 12px;
+    color: #555;
+    margin-top: 6px;
+}
+
+.checkbox-job-group {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.form-declaration {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #000;
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.form-declaration input[type="checkbox"] {
+    width: auto !important;  /* override global width */
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.form-declaration label {
+    flex: 1;
+    word-break: break-word;
+}
+
+.required-asterisk {
+    color: red;
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+
+
+
+form .submit-btn {
+    background-color: #e9963f;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    grid-column: span 2;
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+}
+
+form .submit-btn:hover {
+    background-color: #e9963f;
+}
+
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+    .job-content {
+        flex-direction: column;
+    }
+
+    .job-meta2 {
+        order: -1;
+        margin-bottom: 50px;
+        top: 50px;
+    }
+
+    .job-description {
+        order: 0;
+    }
+}
+
+.overlay-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 30px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* ==== 1440px ==== */
+@media screen and (max-width: 1440px) {
+    .hero-banner h1 {
+        font-size: 32px;
+    }
+    
+    .form-container {
+        max-width: 700px;
+        padding: 35px 25px;
+    }
+}
+
+/* ==== 1024px ==== */
+@media screen and (max-width: 1024px) {
+    .hero-banner {
+        padding: 50px 30px 60px;
+    }
+    .hero-banner h1 {
+        font-size: 28px;
+    }
+    .job-content {
+        flex-direction: row;
+        flex-wrap: wrap; /* allow wrapping if needed but keep order */
+        padding: 0 15px;
+        gap: 20px;
+    }
+    .job-meta {
+        width: 100%;
+        position: relative;
+        top: 0px;
+        height: 180px;
+    }
+    .form-container {
+        max-width: 650px;
+    }
+}
+
+/* ==== 768px ==== */
+@media screen and (max-width: 768px) {
+    .hero-banner {
+        padding: 40px 20px 50px;
+    }
+    .hero-banner h1 {
+        font-size: 24px;
+    }
+    .hero-banner h2 {
+        font-size: 16px;
+    }
+    .apply-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    .job-description h3 {
+        font-size: 20px;
+    }
+    .job-description p {
+        font-size: 15px;
+    }
+    .form-container {
+        padding: 30px 20px;
+    }
+    form {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    .full-width {
+        grid-column: span 1 !important;
+    }
+}
+
+/* ==== 425px and below ==== */
+@media screen and (max-width: 425px) {
+    .hero-banner {
+        padding: 30px 15px 40px;
+    }
+    .hero-banner h1 {
+        font-size: 20px;
+    }
+    .hero-banner h2 {
+        font-size: 14px;
+    }
+    .apply-btn {
+        font-size: 13px;
+        padding: 10px 16px;
+        top: 0px;
+        right: 30px;
+
+    }
+    .job-description h3 {
+        font-size: 18px;
+        right: 30px;
+        position: relative;
+        top: -30px;
+    }
+    .job-description p,
+    .job-meta p {
+        font-size: 14px;
+        width: 250px;
+        align-items: center;
+        text-align:left;
+        right: 0px;
+        position: relative;
+        margin-top: -40px;
+    }
+    .form-container {
+        padding: 20px 15px;
+    }
+    .form-container h2 {
+        font-size: 22px;
+    }
+    .form-declaration {
+        font-size: 14px;
+        gap: 10px;
+    }
+    .submit-btn {
+        font-size: 15px;
+        padding: 12px 18px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .overlay-form form {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .overlay-form form > div {
+        width: 100%;
+    }
+
+    .overlay-form .full-width {
+        width: 100% !important;
+    }
+}

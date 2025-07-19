@@ -1,0 +1,10 @@
+{
+    "routes": [
+      {
+        "route": "/*/",
+        "redirect": "/:splat",
+        "statusCode": 301
+      }
+    ]
+  }
+  

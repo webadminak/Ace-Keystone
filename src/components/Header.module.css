@@ -1,0 +1,1152 @@
+@font-face {
+  font-family: 'Boucherie Block';
+  src: url('/public//fonts/fonts/Boucherie\ Block\ W05\ Bold.woff') format('woff'),
+       url('/public/fonts//fonts/Boucherie\ Block\ W05\ Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.adept-text {
+  font-family: 'Boucherie Block', sans-serif;
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 33px;
+  left: 0;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  border-radius: 12px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdownMenu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdownColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dropdownColumn a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #222;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdownColumn a:hover {
+  background-color: #007bff1a;
+  color: #007bff;
+}
+
+
+
+.hiddenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160px; /* Same height as the navbar */
+  background: rgba(255, 255, 255, 0); /* Fully transparent */
+  z-index: 9998; /* Below navbar */
+  pointer-events: none;
+  mix-blend-mode: difference; /* Hides content behind */
+}
+
+.main-content {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, black 80px);
+  mask-image: linear-gradient(to bottom, transparent 0px, black 80px);
+}
+
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Ensure horizontal scrolling is disabled */
+}
+
+/* Default Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 160px;
+  z-index: 9999;
+  background: linear-gradient(to bottom, black, rgb(0 0 0 / 0%));
+  transition: background 0.5s ease;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .navbar {
+    height: 130px !important;
+
+  }
+}
+
+
+
+
+
+/* Apply blur only for Teams page */
+.navbarBlur {
+  backdrop-filter: blur(5px);
+}
+
+.navbarScrolled {
+  background-color: black !important; /* Ensure the background color remains black */
+  background-image: url('../img/second.jpg'); /* Same image */
+  background-size: cover; /* Prevent zooming */
+  background-position: center; /* Keep it centered */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 15px;
+  position: relative;
+}
+
+.navbarHeader {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto; /* Take only the necessary space for logo and brand */
+  padding: 10px 60px 0px 70px;
+}
+
+.logoContainer img {
+  width: 90px !important;
+  height: 100px !important;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .logoContainer img {
+    width: 60px !important;
+    height: 70px !important;
+    right: 40px;
+    position: relative;
+  }
+}
+
+.navbarBrand {
+  margin-left: -20px;
+  font-weight: bold;
+  margin-bottom: 15;
+  color: rgb(255, 165, 31);
+  width: 400px;
+  font-size: 32px;
+  transition: color 0.5s ease;
+  position: relative;
+  top: 5px;
+  font-family: 'Boucherie Block', sans-serif;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .navbarBrand {
+    
+    font-size: 26px !important;
+    position: relative;
+    right: 25px;
+  }
+}
+@media (max-width: 1440px) and (max-width: 1440px) {
+  .customNavbarBrand {
+    font-family: 'Boucherie Block', sans-serif;
+    font-size: 24px;
+    position: relative;
+    right: 25px;
+  }
+}
+
+
+
+
+
+
+
+
+.adept-text {
+  font-family: 'Boucherie Block', sans-serif !important;
+}
+
+/* Position the hamburger icon in the top-right corner */
+.navbarToggle {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 20px;
+  right: 20px; 
+  z-index: 1000;
+}
+
+.navbarToggle.active .iconBar:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.navbarToggle.active .iconBar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbarToggle.active .iconBar:nth-child(3) {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+
+.navbarToggle .iconBar {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 5px 0;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Navbar collapses into a vertical dropdown on smaller screens */
+.navbarCollapse {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  bottom: 80;
+  left: 40;
+}
+
+.navbarNav {
+  display: none; /* Hidden by default */
+  flex-direction: column; /* Stack items vertically */
+  position: absolute; /* Positioning the links below the hamburger icon */
+  top: 63px; /* Distance below the navbar */
+  right: 20px; /* Align to the right */
+  background-color: #ffffff00;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+  z-index: 998; /* Make sure it's above other content */
+  padding-right: 100px;
+}
+
+.navbarNav li {
+  margin-bottom: 10px; /* Space between items */
+}
+
+/* Show navbar links when hamburger is clicked */
+.navbarCollapse.show .navbarNav {
+  display: flex; /* Display links in a column */
+}
+
+.navbarToggle.active + .navbarCollapse .navbarNav {
+  display: flex; /* Display the nav links when hamburger is active */
+}
+
+.pageScroll {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.pageScroll::before{
+  top: -3px; /* Creates extra space above */
+  bottom: -3px; /* Creates extra space below */
+  left: -5px; /* Extra padding on left */
+  right: -5px; /* Extra padding on right */
+}
+.pageScroll::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: -4px;
+  left: 0;
+  top: 38px;
+  background-color: #ff9300;
+  transition: width 0.3s ease;
+}
+.pageScroll:hover::after {
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+}
+
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 36px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  bottom: 5px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.navLink::before {
+  content: "";
+  position: absolute;
+  top: -3px; /* Creates extra space above */
+  bottom: -3px; /* Creates extra space below */
+  left: -5px; /* Extra padding on left */
+  right: -5px; /* Extra padding on right */
+  background-color: transparent;
+  border-radius: 5px;
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+
+@media (min-width: 769px) { /* Apply hover effect only for desktops */
+  .navLink:hover {
+    color: #ffffff; /* Ensure text remains white */
+    transform: translateY(0); /* Prevent movement */
+  }
+
+  .navLink:hover::before {
+    background-color: #007bff; /* Background appears without shifting text */
+  }
+}
+
+
+
+/* Styles for the mini dropdown under Our Team in Mobile View */
+.mobileDropdown {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  left: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1001; /* Higher than overlay */
+}
+
+/* Styles for Core Team and Consultants links */
+.mobileDropdownLink {
+  color: #a7a6a6  !important; /* Text color grey */
+  font-size: 18px !important; /* Adjust font size */
+  text-decoration: none;
+  padding: 3px 25px;
+  display: block;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.mobileDropdownLink:hover {
+  color: #f1f1f1; /* Light hover effect */
+  border-radius: 4px;
+}
+
+
+.navLink:hover {
+  color: #ffffff; /* Ensure text remains white */
+  transform: translateY(0); /* Prevent the element from moving up/down on hover */
+}
+
+
+.dropdownContent {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 30px;
+  left: -160px;
+  background-color: rgb(82, 82, 82);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 2px;
+  padding: 10px;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  pointer-events: none; /* Prevent interaction when not visible */
+}
+.dropdownContent.show {
+  visibility: visible;
+  opacity: 1; /* Make it visible with smooth opacity transition */
+  display: block;
+}
+
+/* Dropdown links */
+.dropdownContent a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+  white-space: nowrap;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+}
+
+.dropdownContent a:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+/* Dropdown links */
+.dropdownLink {
+  padding: 5px 36px;
+  text-decoration: none;
+  display: block;
+  color: rgb(255, 255, 255); /* Adjust as needed */
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.dropdownLink:hover {
+  background-color: transparent; /* Or your hover effect */
+}
+
+/* Ensure that pointer-events are active on hover and click */
+.dropdownContent {
+  pointer-events: none;
+}
+
+
+
+/* Ensures the dropdown stays visible for a little while after mouse leave */
+.dropdownContent {
+  pointer-events: auto; /* Allow interaction */
+}
+
+.dropdown:hover .dropdownContent {
+  pointer-events: none; /* Prevent interaction when not hovering */
+}
+
+.dropdownContent.left {
+  left: -100%;
+}
+
+/* Mobile & Tablet Styles */
+@media (max-width: 1024px) {
+  .navbarToggle {
+    display: block;
+  }
+
+  .navbarNav {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: relative;
+    top: 60px;
+    left:-70px;
+    padding: 20px;
+  }
+
+  .navbarNav li {
+    margin-bottom: 10px;
+  }
+
+  .navbarCollapse.show .navbarNav {
+    display: flex;
+  }
+
+  .dropdownContent {
+    left: 0; /* Reset position for mobile screens */
+    top: 40px; /* Position below the "Our Team" button */
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Make sure it's hidden */
+    pointer-events: none; /* Prevent clicks until visible */
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  .dropdownContent.left {
+    left: -150px;
+  }
+
+  .dropdown:hover .dropdownContent {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Enable interaction */
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+  }
+
+  .dropdown .dropdownContent {
+    transition-delay: 0.5s; /* Delay the hiding by 0.5 seconds */
+  }
+
+  .navbarToggle.active + .navbarCollapse .navbarNav {
+    display: flex;
+  }
+  .navLink{
+    width: 190px;
+    top: 0px;
+    font-size: 18px;
+    align-items:center ;
+    justify-content: center;
+    right: 10px;
+  }
+
+  .hero-content h1{
+    font-size: 20px;
+  }
+}
+
+/* 4K Desktop (2560px and above) */
+@media (min-width: 2560px) {
+  .navbarNav {
+    display: flex; /* Horizontal layout for nav links */
+    flex-direction: row;
+  }
+
+  .navbarNav li {
+    margin-left: 20px; /* Space between items */
+  }
+
+  .navbarToggle {
+    display: none; /* Hide hamburger icon in 4K view */
+  }
+  
+}
+
+@media (min-width: 2560px) {
+  .pageScroll {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .pageScroll:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .navLink {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+  }
+}
+
+.arrow i {
+  margin-left: 8px;
+  margin-top: 10px;
+  font-size: 50px !important;
+  vertical-align: middle;
+}
+
+
+
+/* For screens between 1441px to 2560px (larger screens, below 4k) */
+@media (min-width: 768px) and (max-width: 2560px) {
+  .navbarNav {
+    display: flex; /* Horizontal layout for nav links */
+    flex-direction: row;
+    width: 950px;
+    top: 55px;
+  }
+
+  .pageScroll{
+    color: white;
+  }
+
+  
+  .pageScroll:hover{
+    color: #ff9300;
+
+  }
+
+  .navLink{
+    color: white;
+    top: -4px;
+    padding: 3px 3px;
+    background: transparent;
+    border: none;
+  }
+  
+
+  .navbarNav li {
+    margin-left: 20px; /* Space between items */
+  }
+
+  /* Adjust dropdown position for larger screens (below Our Team button) */
+  .dropdownContent {
+    left: 15px; /* Align dropdown content below "Our Team" button */
+    top: 40px; /* Adjust this value to position the dropdown below the button */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: auto;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  /* Show the dropdown when hovering over the parent (Our Team) */
+  .dropdown:hover .dropdownContent {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+  }
+
+  /* Delay hiding the dropdown after mouse leaves */
+  .dropdown .dropdownContent {
+    transition-delay: 0.5s; /* Delay the hiding by 0.5 seconds */
+    left: -20px;
+  }
+  .navbarToggle {
+    display: none; /* Hide hamburger icon */
+  }
+}
+
+
+/* Laptop L (1440px) and below (1024px and 768px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .navbarNav {
+    display: flex !important; /* Hidden by default */
+    flex-direction: row ;
+    position: absolute;
+    padding: 0px;
+    border-radius: 0px;
+    width: 670px !important;
+    align-items: center;
+    position: relative;
+    top: 93px;
+    font-size: 16px !important;
+    left: 200px;
+  }
+
+  .navbarToggle {
+    display: block;
+  }
+
+  .navbarCollapse.show .navbarNav {
+    display: flex; /* Show the links on click */
+  }
+
+  .navbarNav li {
+    margin: 0 2px; /* Adjust this value to control horizontal spacing */
+    padding: 0;     
+  }
+
+  /* Initially hide dropdown content */
+  .dropdownContent {
+    left: -160px; /* Left position for screens below 1440px */
+    top: -10px;
+    opacity: 0; /* Make dropdown content invisible */
+    visibility: hidden; /* Make dropdown content hidden */
+    pointer-events: none; /* Prevent clicking when it's not visible */
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Transition to hide after delay */
+  }
+
+  /* Show the dropdown when hovering over the parent (Our Team) */
+  .dropdown:hover .dropdownContent {
+    opacity: 1; /* Show the dropdown */
+    visibility: visible; /* Make the dropdown visible */
+    pointer-events: auto; /* Allow interaction with the dropdown items */
+    transition: opacity 0.3s ease, visibility 0s linear 0s; /* Instant visibility */
+  }
+
+  /* When mouse leaves the parent, delay hiding the dropdown */
+  .dropdown .dropdownContent {
+    transition-delay: 0.5s; /* Delay the hiding by 0.5 seconds */
+  }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1025px) {
+  .navbarNav {
+    display: flex !important; /* Hidden by default */
+    flex-direction: row ;
+    position: absolute;
+    padding: 0px;
+    border-radius: 0px;
+    width: 670px !important;
+    align-items: center;
+    position: relative;
+    top: 93px;
+    font-size: 16px !important;
+    left: -190px;
+  }
+  .navbarNav li {
+    margin: 0 2px; /* Adjust this value to control horizontal spacing */
+    padding: 0;     
+  }
+}
+
+
+/* Laptop L (1440px) and below (1024px and 768px) */
+@media (max-width: 1440px) {
+  .navbarNav {
+    display: flex; /* Hidden by default */
+    flex-direction: row;
+    position: absolute;
+    padding: 0px;
+    border-radius: 0px;
+    width: 850px;
+    align-items: center;
+    position: relative;
+    top: 93px;
+    font-size: 20px;
+
+  }
+
+  .navbarToggle {
+    display: none;
+    padding-right: 0px;
+    padding-top: 0px;
+  }
+
+  .navbarCollapse.show .navbarNav {
+    display: flex; /* Show the links on click */
+  }
+
+  .navbarNav li {
+    margin-bottom: 10px; /* Space between items */
+  }
+
+  /* Initially hide dropdown content */
+  .dropdownContent {
+    left: -160px;
+    top: -10px;
+    opacity: 0; /* Make dropdown content invisible */
+    visibility: hidden; /* Make dropdown content hidden */
+    pointer-events: none; /* Prevent clicking when it's not visible */
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Transition to hide after delay */
+  }
+
+  /* Show the dropdown when hovering over the parent (Our Team) */
+  .dropdown:hover .dropdownContent {
+    opacity: 1; /* Show the dropdown */
+    visibility: visible; /* Make the dropdown visible */
+    pointer-events: auto; /* Allow interaction with the dropdown items */
+    transition: opacity 0.3s ease, visibility 0s linear 0s; /* Instant visibility */
+  }
+
+  /* When mouse leaves the parent, delay hiding the dropdown */
+  .dropdown .dropdownContent {
+    transition-delay: 0.5s; /* Delay the hiding by 0.5 seconds */
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .dropdownContent {
+    left: -120px;
+  }
+  .navbarNav {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100px; /* Adjusted for better positioning */
+    right: 60px;
+    background-color: #6d6d6d;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+    width: 160px; /* Adjust width for better mobile view */
+    align-items: center;
+    color: #000000;
+  }
+
+  .navbarToggle {
+    display: block;
+    top: 10px;
+    right: 0px;
+    position: relative;
+  }
+
+  .navbarCollapse.show .navbarNav {
+    display: flex; /* Show the navbar links when active */
+  }
+
+  .navbarNav li {
+    margin-bottom: 10px; /* Space between items */
+  }
+
+  /* Dropdown menu visibility and interaction */
+  .dropdownContent {
+    left: -160px;
+    top: -10px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  .dropdown:hover .dropdownContent {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Enable interaction */
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+  }
+
+  .dropdown .dropdownContent {
+    transition-delay: 0.5s; /* Delay hiding */
+    left: -160px;
+  }
+
+  /* Adjust navbar links and spacing */
+  .navbarNav li {
+    margin-bottom: 15px; /* Increased space between items for easier tapping */
+  }
+ 
+  .logoContainer img {
+    width: 75px !important;
+    height: 75px !important;
+    right: 20px;
+    top: 20px;
+    position: relative;
+  }
+}
+
+
+
+
+@media (min-width: 768px) and (max-width: 769px){
+.navbarBrand{
+  width: 300px;
+  font-size: 24px;
+  position: relative;
+  right: 0px;
+  left: -10px;
+  top: 25px;
+}
+.navbarToggle {
+  display: block;
+  top: 10px;
+  right: -200px;
+  position: relative;
+}
+
+}
+
+@media (min-width:768px) and (max-width:1440px){
+  .navLink{
+    color: white;
+    top: -4px;
+    width: 180px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    left: 1px;
+    background: transparent;
+    border: none;
+  }
+  .dropdown:hover .dropdownContent {
+    left: -120px;
+  }
+}
+
+/* Mobile View (max-width: 425px) */
+@media (max-width: 425px) {
+  .navbarNav {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100px; /* Adjusted for better positioning */
+    right: 50px;
+    background-color: #6d6d6d;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+    width: 140px; /* Adjust width for better mobile view */
+    align-items: center;
+    color: #000000;
+  }
+
+  .navbarToggle {
+    display: block;
+    top: 20px;
+    right: -50px;
+  }
+
+  .navbarCollapse.show .navbarNav {
+    display: flex; /* Show the navbar links when active */
+  }
+
+  .navbarNav li {
+    margin-bottom: 10px; /* Space between items */
+  }
+
+  /* Dropdown menu visibility and interaction */
+  .dropdownContent {
+    left: -140px;
+    top: -10px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  .dropdown:hover .dropdownContent {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Enable interaction */
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+  }
+
+  .dropdown .dropdownContent {
+    transition-delay: 0.5s; /* Delay hiding */
+  }
+
+  /* Adjust navbar links and spacing */
+  .navbarNav li {
+    margin-bottom: 15px; /* Increased space between items for easier tapping */
+  }
+  .navbarBrand{
+    width: 200px;
+    font-size: 20px;
+    position: relative;
+    right: 50px;
+  }
+  .logoContainer img {
+    width: 65px !important;
+    height: 55px !important;
+    right: 40px;
+  }
+  
+}
+
+
+/* Increase specificity to override Font Awesome styles */
+.navbar .custom-icon {
+  padding-top: 2px !important;
+  padding-left: -5px !important;
+}
+
+
+
+
+/* Mobile View (max-width: 375px) */
+@media (max-width: 375px) {
+  /* Navbar adjustment */
+  .navbar {
+    height: 140px; /* Reduce navbar height */
+  }
+
+  /* .navbarBrand {
+    width: 180px; 
+    font-size: 18px; 
+    margin-left: 0;
+    position: relative;
+    right: 20px;
+  } */
+
+  /* .logoContainer {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    padding: 40px 20px 20px 30px;
+  }
+
+  .logoContainer img {
+    width: 60px !important;
+    height: 50px !important;
+    right: 20px;
+  } */
+
+  /* Navbar items */
+  .navbarNav {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 120px; /* Adjusted for better positioning */
+    right: 30px;
+    background-color: #444444; /* Darker background for better contrast */
+    padding: 15px;
+    width: 140px; /* Adjust width for mobile view */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    align-items: center;
+  }
+
+  .navbarNav li {
+    margin-bottom: 10px; /* Space between items */
+  }
+
+  .navbarToggle {
+    display: block; /* Ensure the hamburger icon is displayed */
+    top: 15px;
+    right: -70px; /* Position the toggle better */
+  }
+
+  /* When hamburger is active */
+  .navbarCollapse.show .navbarNav {
+    display: flex; /* Show the navbar links */
+  }
+
+  /* Dropdown adjustments */
+  .dropdownContent {
+    left: -140px; /* Adjust the left position */
+    top: -5px; /* Adjust dropdown vertical position */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  .dropdown:hover .dropdownContent {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Enable interaction */
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+  }
+
+  /* Adjust navbar links spacing */
+  .navbarNav li {
+    margin-bottom: 13px; /* More space for tapping on small screens */
+    margin-top: 2;
+  }
+
+  /* NavbarBrand and logo adjustments */
+  .navbarBrand {
+    font-size: 18px;
+    width: 180px;
+    top: 2px;
+  }
+
+  /* Reduce the font size and logo size for better fitting on 375px */
+  /* .logoContainer img {
+    width: 60px !important;
+    height: 50px !important;
+  } */
+
+  .navLink {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px; /* Set padding for the default state */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+    position: relative;
+    bottom: 0px;
+    border-radius: 4px;
+  
+  }
+/* Scroll effect for navbar background */
+.navbarScrolled {
+  background-color: black !important; /* Change navbar background to black */
+  box-shadow: none !important; /* Optionally remove the box shadow */
+}
+
+/* Apply styles for navbar when scrolled */
+.navbar {
+  background-color: transparent;
+}
+
+.team-info p{
+  color: #000000;
+
+}
+}
+
+
+
+@media (min-width:300px) and (max-width:425px){
+  .navbarBrand {
+    font-size: 25px;
+    width: auto;
+    right: 40px;
+    top: 18px;
+  }
+
+  .logoContainer img {
+    width: 75px !important;
+    height: 75px !important;
+    right: 60px;
+    top: 10px;
+  }
+
+  .navbarToggle {
+    display: block;
+    top: 10px;
+    right: 145px;
+  }
+ 
+}
+
+
+@media (max-width: 1439px) {
+  .contactLink {
+    margin-top: -5px;
+    padding-top: 0px;
+    position: relative;
+    bottom: 0px;
+  }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 430px) and (max-width: 430px) {
+.navbarToggle {
+  display: block;
+  top: 12px;
+  right: 130px;
+  position: relative;
+}
+}
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .logoContainer img {
+    width: 75px !important;
+    height: 75px !important;
+    right: 50px;
+    top: 20px;
+    position: relative;
+  }
+}
+@media (max-width: 480px) {
+  .navbarBrand {
+    margin-left: -20px;
+    font-weight: bold;
+    margin-bottom: 15;
+    color: rgb(255, 165, 31);
+    width: 300px;
+    font-size: 27px;
+    transition: color 0.5s ease;
+    position: relative;
+    top: 26px;
+    right: 25px;
+    font-family: 'Boucherie Block', sans-serif;
+  }
+}

@@ -1,99 +1,417 @@
-* {
-    font-family: 'Nunito', sans-serif;
+/* Background Styling */
+.teams-Container {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Centered Section */
+
+
+/* Header */
+.teams-Heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-image: url('../img/9019808.jpg'); /* Same image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 10; /* Keep above scrolling content */
+}
+
+
+/* Tabs (Buttons) */
+.team-Tabs {
+  margin-bottom: 20px;
+}
+
+.teams-TabButton {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.team-tab-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Team Member Cards */
+.team-members-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.teamContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.teamHeading {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Team Member Card */
+.memberCard {
+  width: 45%;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  text-align: center;
+ transition: none;  
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+}
+
+.smallCard {
+  width: 35%;  /* Reduce width */
+  padding: 20px;  /* Reduce padding */
+  min-height: 400px;  /* Reduce height */
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px; /* Ensure fixed height so content stays in place */
+}
+
+.memberCard:hover {
+  background-color: #007bff;
+}
+
+.memberCard:hover .name,
+.memberCard:hover .description {
+  color: white;
+}
+
+.memberCard:hover .role {
+  color: black;
+  font-weight: 700;
+}
+
+.memberCard:hover .linkedin-icon {
+  color: white;
+}
+
+/* Image inside Card */
+.memberImage {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Member Name */
+.name {
+  color: black;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Role */
+.role {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 1.2rem;
+}
+
+/* Description */
+.description {
+  color: black;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* LinkedIn Icon */
+.linkedinIcon {
+  font-size: 30px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.memberCard:hover .linkedinIcon {
+  color: black;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #0F1035;
+  color: white;
+  padding: 40px;
+  text-align: center;
+  margin-top: 130px;
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+
+/* Extra Large Screens (4K) */
+@media screen and (min-width: 2560px) {
+  .teams-Heading {
+    font-size: 3rem;
   }
-  
-  .textBlk {
-    margin: 0;
-    line-height: 25px;
+
+  .memberCard {
+    width: 30%;
+    min-height: 800px;
+    padding: 60px;
   }
-  
-  .responsiveContainerBlock {
-    min-height: 75px;
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    justify-content: space-evenly;
+
+  .smallCard {
+    width: 35%;  /* Reduce width */
+    padding: 20px;  /* Reduce padding */
+    min-height: 400px;  /* Reduce height */
   }
-  
-  .outerContainer {
-    padding: 10px 50px;
-    background-color: rgb(244, 252, 255);
-  }
-  
-  .innerContainer {
-    max-width: 1320px;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px auto;
-  }
-  
-  .sectionHeadText {
-    font-size: 35px;
-    font-weight: 700;
-    line-height: 48px;
-    color: rgb(0, 135, 177);
-    margin: 0 0 10px;
-  }
-  
-  .sectionSubheadText {
-    font-size: 25px;
-    color: rgb(153, 153, 153);
-    line-height: 35px;
-    max-width: 470px;
+  .team-Content {
     text-align: center;
-    margin: 0 0 60px;
+    padding: 200px 5% 20px;
   }
-  
-  .imgWrapper {
+
+  .memberImage {
+    width: 300px;
+    height: 300px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .role {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+/* Large Screens (Desktops, Laptops) */
+@media screen and (min-width: 1024px) and (max-width: 2559px) {
+  .teams-Heading {
+    font-size: 2.5rem;
+  }
+
+  .memberCard {
+    width: 40%;
+    min-height: 700px;
+    padding: 50px;
+  }
+
+  .smallCard {
+    width: 35%;  /* Reduce width */
+    padding: 50px;  /* Reduce padding */
+    min-height: 400px;  /* Reduce height */
+  }
+  .team-Content {
+    text-align: center;
+    padding: 200px 5% 20px;
+  }
+
+  .memberImage {
+    width: 250px;
+    height: 250px;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .role {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+/* Medium Screens (Tablets & Small Laptops) */
+@media screen and (max-width: 1024px) {
+  .teams-Heading {
+    font-size: 2rem;
+  }
+
+  .memberCard {
+    width: 60%;
+    min-height: 600px;
+    padding: 40px;
+  }
+
+  .memberImage {
+    width: 230px;
+    height: 230px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .role {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+/* Small Screens (Phones) - Display One Card Per Row */
+@media screen and (max-width: 768px) {
+  .teams-Heading {
+    font-size: 1.8rem;
+  }
+
+  .memberCard {
+    width: 90%;
+    min-height: 550px;
+    padding: 30px;
+  }
+
+  .memberImage {
+    width: 210px;
+    height: 210px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .role {
+    font-size: 13px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+}
+
+/* Extra Small Screens (Mobile Phones) */
+@media screen and (max-width: 480px) {
+  .teams-Heading {
+    font-size: 1.5rem;
+  }
+
+  .memberCard {
     width: 100%;
+    min-height: 500px;
+    padding: 25px;
   }
-  
-  .teamCard {
+
+  .memberImage {
+    width: 200px;
+    height: 200px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .role {
+    font-size: 13px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+}
+
+/* Adjusting tab buttons for small screens */
+@media screen and (max-width: 574px) {
+  .team-Tabs {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px; /* Adds space at the top to prevent header overlap */
+    gap: 10px; /* Adds space between buttons */
   }
-  
-  .socialMediaLinks {
-    width: 125px;
+
+  .teams-TabButton {
+    width: 50%; /* Makes buttons stretch wider for better touch experience */
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 401px) {
+  .team-Tabs {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px; /* Adds space at the top to prevent header overlap */
+    gap: 10px; /* Adds space between buttons */
   }
-  
-  .name {
-    font-size: 25px;
-    font-weight: 700;
-    color: rgb(102, 102, 102);
-    margin: 0 0 5px;
+
+  .teams-TabButton {
+    width: 60%; /* Makes buttons stretch wider for better touch experience */
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
   }
-  
-  .position {
-    font-size: 25px;
-    font-weight: 700;
-    color: rgb(0, 135, 177);
-    margin: 0 0 50px;
+}
+
+@media (min-width:375px) and (max-width: 425px) {
+  .teams-TabButton {
+    width: 50%; /* Makes buttons stretch wider for better touch experience */
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
   }
-  
-  .teamImg {
-    width: 100%;
-    height: auto;
+  .team-Content {
+    text-align: center;
+    padding: 130px 5% 20px;
   }
-  
-  .teamCardContainer {
-    width: 280px;
-    margin: 0 0 40px;
+}
+
+@media (max-width:375px) {
+  .team-Content {
+    text-align: center;
+    padding: 160px 5% 20px;
   }
-  
-  /* Responsive styles */
-  @media (max-width: 500px) {
-    .outerContainer {
-      padding: 10px 20px;
-    }
-  
-    .sectionHeadText {
-      text-align: center;
-    }
-  }
-  
+
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ff9300;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #000000;
+}
