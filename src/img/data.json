@@ -1,0 +1,93 @@
+{
+  "Header": {
+    "title": "Potential >= Passion",
+    "paragraph": "Achieve the right growth curve with the virtuous Technology Partner. Utilizing the foremost technology accompanied by a great team will power you to be world-class digital experiences and identity."
+  },
+  "About": {
+    "paragraph": "AK technologies were established in 2022, with the aim of deriving and delivering cutting-edge innovative data-based solutions in response to challenges across a variety of problem areas. Our goal is to develop a team of experts who will provide the right solution to businesses, whilst creating a nurturing environment to thrive. We are always looking for an opportunity to prove our passion and with a team that comprises enthusiasts across autonomous sensing systems, artificial Intelligence, urban planning, and business development, our team is ready and committed to delivering excellence.",
+    "Why": [
+      "Proven Expertise",
+      "Innovative Solutions",
+      "Customization",
+      "User-Centric Design"
+    ],
+    "Why2": [
+      "Quality Assurance",
+      "Timely Delivery",
+      "Cost-Effective Solutions",
+      "Transparent Communication"
+    ]
+  },
+ 
+  "Projects": [
+    {
+      "icon": "fa fa-pie-chart",
+      "name": "Geo Spatial Data",
+      "text": "Our client is a prop tech company based in London, United Kingdom is changing the landscape of property data management through the use of innovative and interactive tools that will help clients sift through a large database of planning related searches and get answers real-time in record time. We are proud to be assisting them with data processing, curation and enrichment, using a variety of software platforms like QGIS, for spatial data processing and retool to enrich large sets of unstructured data."
+    },
+    
+    {
+      "icon": "fa fa-language",
+      "name": "MedTech Our Client",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/Abishek-photo.jpg",
+      "name": "Abishek",
+      "job": "Software Developer"
+    },
+    {
+      "img": "img/team/Green-photo.jpg",
+      "name": "Pachamuthu",
+      "job": "Data Admin"
+    },
+    {
+      "img": "img/team/A",
+      "name": "Karthick",
+      "job": "Machine Learning Engineer"
+    },
+    {
+      "img": "img/team/Semil-photo.jpeg",
+      "name": "Semil",
+      "job": "Junior Machiner Learning Engineer"
+    },
+    {
+      "img": "img/team/Image.jpeg",
+      "name": "Semil",
+      "job": "Junior Machiner Learning Engineer"
+    }
+    
+  ],
+  "Contact": {
+    "address": "307, 3rd Floor, PSG - Science and Technology Entrepreneurical Park(PSG-STEP),E8 Block, PSG iTECH Campus, Neelambur, Coimbatore - 641 062",
+    "phone": "+918925531013",
+    "email": "webadmin@ak-tech.in",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-wrench",
+      "title": "HARDWARE",
+      "text": "We help our clients to identify and effectively adapt to the continuous change in thier industry. Companies who effectively adapt to change are better able to manage disruption and consistently meet their customers’ expectations."
+    },
+    {
+      "icon": "fa fa-android",
+      "title": "SOFTWARE",
+      "text": "Our team is a group of technophiles and focusing on developing state-of-art technologies that helps our clients to increase efficiency, greater business agility and, ultimately, the unlocking of new value for employees, customers and shareholders."
+    },
+    {
+      "icon": "fa fa-lightbulb-o",
+      "title": "INNOVATIONS",
+      "text": "Our design team works on the product development in three unqiue blocks Understand the problem and the opportunity. Define your product (and do it early!). Visualize your product."
+    },
+    {
+      "icon": "fa fa-group",
+      "title": "BUSINESS SUPPORT",
+      "text": "Our team of experts provide end to end support for your business, ranging from new product development, existing product upgrade etc, as well provide support in, market research, brand management and fundraising."
+    }
+  ]
+}

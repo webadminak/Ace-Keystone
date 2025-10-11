@@ -1,0 +1,364 @@
+/* General Layout */
+.services-container {
+    min-height: 100vh;
+    background: whitesmoke;
+    padding: 64px 16px;
+    margin-top: 180px;
+    text-align: center;
+    height: 900px;
+  }
+  
+  .main-heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 16px;
+    text-transform: none;
+  }
+  
+  .main-description {
+    font-size: 16px;
+    color: #4b5563;
+    max-width: 1000px;
+    margin: 0 auto 48px;
+    text-align: center;
+  }
+  
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .card-row {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card-row.single {
+    justify-content: center;
+  }
+  
+  /* Service Card */
+  .service-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 550px;
+    height: 420px;
+    cursor: pointer;
+    transition: transform 0.05s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  
+  .service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.05s ease;
+  }
+  
+  .service-card-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 2;
+  }
+  
+  .service-card-title-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 3;
+  }
+  
+  .service-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    transition: color 0.05s ease;
+  }
+  
+  .service-hover-content {
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.05s ease;
+  }
+  
+  .service-hover-content h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  
+  .service-hover-content p {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 20px;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #0F1035;
+    color: white;
+    padding: 30px;
+    margin-top: 140px;
+    margin-bottom: 0px;
+  }
+  
+  /* Responsive Media Queries */
+  @media (max-width: 1440px) {
+    .main-heading {
+      font-size: 36px;
+    }
+    .service-card {
+      padding: 32px 16px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .main-heading {
+      font-size: 32px;
+    }
+    .main-description {
+      font-size: 15px;
+    }
+    .service-title {
+      font-size: 18px;
+    }
+    .service-card {
+      padding: 28px 16px;
+      width: 40%;
+      height: 370px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-heading {
+      font-size: 28px;
+    }
+    .main-description {
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .card-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    .service-card {
+      padding: 24px 12px;
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .main-heading {
+      font-size: 24px;
+    }
+    .main-description {
+      font-size: 13px;
+    }
+    .service-card {
+      padding: 20px 10px;
+      width: 300px;
+    }
+    .service-title {
+      font-size: 16px;
+    }
+    .service-hover-content {
+      font-size: 13px;
+      padding: 16px;
+    }
+  }
+
+/* ---------- Explore button overlay (Map card) ---------- */
+
+/* container for the link/button - positioned in image area */
+.explore-link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* allow clicks only on the button itself */
+}
+
+/* the button - hidden by default, shows on card hover */
+.explore-button {
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  transition: opacity 210ms cubic-bezier(.2,.9,.2,1), transform 210ms cubic-bezier(.2,.9,.2,1);
+  background: rgba(255,255,255,0.95);
+  border: 2px solid rgba(15,23,42,0.08);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #0b1220;
+  box-shadow: 0 10px 20px rgba(2,6,23,0.12);
+  cursor: pointer;
+}
+
+/* show on desktop hover */
+.service-card:hover .explore-button,
+.service-card:focus-within .explore-button {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* keep the button visible when the card is tapped on small screens
+   (mobile: there is no hover; we reveal if user taps anywhere on the card) */
+@media (hover: none) {
+  .service-card .explore-button {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Slight tweak to ensure the button doesn't obscure the service-hover-content
+   but still appears above the image */
+.service-hover-content {
+  z-index: 4; /* keeps description below the explore button but above the image gradient */
+}
+
+/* Accessibility: focus state */
+.explore-button:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 4px;
+}
+
+/* smaller screens adjust size */
+@media (max-width: 768px) {
+  .explore-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+  /* =========================
+   Persistent touch / open state styles
+   Append to services.module.css
+   ========================= */
+
+/* make the overlay visible when card has .is-open (persisted state),
+   or when hovered / focused as before */
+.service-card.is-open .service-hover-content,
+.service-card:focus-within .service-hover-content,
+.service-card:hover .service-hover-content {
+  opacity: 1;
+  pointer-events: auto;        /* allow clicks inside overlay (buttons, links) */
+  transform: translateY(0);    /* if you later add transforms, keep overlay steady */
+  transition: opacity 220ms cubic-bezier(.2,.9,.2,1), transform 220ms cubic-bezier(.2,.9,.2,1);
+  z-index: 6;
+}
+
+/* slightly lift/shine the open card so user perceives it's active */
+.service-card.is-open {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(2,6,23,0.18);
+  z-index: 30; /* make sure it floats above neighbours when opened */
+  transition: transform 200ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms ease;
+}
+
+/* dim image/base layer while overlay is open so text is readable */
+.service-card.is-open .service-card-image img {
+  filter: brightness(0.56) saturate(0.95);
+  transform: scale(1.02);
+  transition: filter 220ms ease, transform 220ms ease;
+}
+
+/* bring gradient above image but below overlay content (keeps same visual depth) */
+.service-card.is-open .service-card-gradient {
+  z-index: 5;
+  opacity: 1;
+  transition: opacity 220ms ease;
+}
+
+/* ensure the title in the image area remains readable when open */
+.service-card.is-open .service-title {
+  color: #f8fafc; /* or keep white (#fff) depending on your design */
+  text-shadow: 0 4px 18px rgba(2,6,23,0.35);
+  transition: color 180ms ease, text-shadow 180ms ease;
+}
+
+/* If you show the .explore-button on hover, keep it visible for .is-open, too */
+.service-card.is-open .explore-button,
+.service-card.is-open .explore-link .explore-button {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  transition: opacity 210ms cubic-bezier(.2,.9,.2,1), transform 210ms cubic-bezier(.2,.9,.2,1);
+  z-index: 12;
+}
+
+/* Accessibility: keep keyboard focus visible when card is "open" */
+.service-card.is-open:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(41,121,255,0.08);
+}
+
+/* Prevent tap highlight / flicker on mobile for better UX */
+.service-card,
+.service-card * {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  touch-action: manipulation;
+}
+
+/* Small-screen tweaks so overlay doesn't overflow and stays centered */
+@media (max-width: 768px) {
+  .service-card.is-open {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(2,6,23,0.16);
+  }
+  .service-card.is-open .service-card-image img {
+    transform: scale(1.01);
+  }
+}
+
+/* Optional: smoother close when toggling off */
+.service-card .service-hover-content {
+  transition: opacity 200ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+/* add to services.module.css (or a global css) */
+
+/* while restoring, hide visual changes to avoid tiny jump */
+.scroll-restoring {
+  visibility: hidden;       /* hide render while we restore scroll */
+  pointer-events: none;     /* prevent accidental taps while restoring */
+}
+
+/* safety: also disable transitions so items don't animate while hidden */
+.scroll-restoring *, .scroll-restoring *::before, .scroll-restoring *::after {
+  transition: none !important;
+  animation: none !important;
+}

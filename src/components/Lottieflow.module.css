@@ -1,0 +1,86 @@
+.lottie-diagram {
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  /* ✅ force any children (like SVG) to scale */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lottie-diagram > svg {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 100%;
+}
+
+
+/* Large Laptop */
+@media (max-width: 1440px) {
+  .lottie-diagram {
+    max-width: 1000px;
+  }
+}
+
+/* Small Laptop */
+@media (max-width: 1024px) {
+  .lottie-diagram {
+    max-width: 900px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .lottie-diagram {
+    max-width: 700px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 425px) {
+  .lottie-diagram {
+    max-width: 100%;
+  }
+}
+
+/* LottieFlow smooth scrolling helpers */
+.lottie-diagram,
+.lottie-diagram > svg {
+  /* promote to compositor layer */
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  /* contain paint/layout if supported to reduce reflow scope */
+  contain: paint;
+
+  /* be explicit about pointer handling */
+  pointer-events: auto;
+}
+
+/* Give a stable rendering box. Adjust max-width as you prefer. */
+.lottie-diagram {
+  width: 100%;
+  max-width: 1200px; /* same as your JS sizing hint */
+  height: auto; /* keep aspect ratio normally */
+  /* if jitter persists, consider an explicit height:
+     height: 600px; (or use aspect-ratio below) */
+  aspect-ratio: 16 / 9; /* optional — gives the browser a stable layout */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Mobile specific */
+@media (max-width: 430px) {
+  .lottie-diagram {
+    max-width: 100%;
+    aspect-ratio: 9 / 16; /* change if your mobile Lottie has different aspect */
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
