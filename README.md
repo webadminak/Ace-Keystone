@@ -105,7 +105,7 @@ Follow the structure visible in the repository. Key folders and files:
   ├─ data/                   # site data / JSON used by components
   ├─ font/                   # custom webfonts (local)
   ├─ img/                    # images imported by React components
-  ├─ map image/              # map assets used by Map components
+  ├─ map image/              # map assets used for Geospatial Section
   ├─ App.jsx
   ├─ index.jsx
   ├─ index.css
@@ -212,6 +212,7 @@ yarn-error.log*
 * License: add `LICENSE` file (e.g., MIT) — replace with your chosen license.
 
 ---
+
 
 
 
