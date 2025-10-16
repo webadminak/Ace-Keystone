@@ -25,7 +25,7 @@
 
 # Project summary
 
-This repository contains the source for the company website. The app is a React codebase (JSX + CSS Modules) with a `public/` folder containing static HTML assets (SEO pages, static site fallbacks). The site integrates map features, forms, components, and a number of page sections (About, Careers, Contact, Teams, Services, etc.).
+This repository contains the source for the company website. The app is a React codebase (JSX + CSS Modules) with a `public/` folder containing static HTML assets (SEO pages, static site fallbacks). The site integrates images, forms, components, and a number of page sections (About, Careers, Contact, Teams, Services, etc.).
 
 ---
 
@@ -213,4 +213,5 @@ yarn-error.log*
 * License: add `LICENSE` file (e.g., MIT) — replace with your chosen license.
 
 ---
+
 
