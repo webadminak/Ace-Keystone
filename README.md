@@ -15,11 +15,10 @@
 5. [Folder structure (explained)](#folder-structure-explained)
 6. [Configuration / environment variables](#configuration--environment-variables)
 7. [Build & deploy](#build--deploy)
-8. [Git workflow & commit conventions](#git-workflow--commit-conventions)
-9. [Contributing](#contributing)
-10. [Code style & tools](#code-style--tools)
-11. [Useful troubleshooting tips](#useful-troubleshooting-tips)
-12. [Contacts & license](#contacts--license)
+8. [Code style & tools](#code-style--tools)
+9. [Useful troubleshooting tips](#useful-troubleshooting-tips)
+10. [Contacts & license](#contacts--license)
+
 
 ---
 
@@ -213,5 +212,6 @@ yarn-error.log*
 * License: add `LICENSE` file (e.g., MIT) — replace with your chosen license.
 
 ---
+
 
 
