@@ -1,15 +1,27 @@
 {
-    "navigationFallback": {
-      "rewrite": "/index.html",
-      "exclude": [
-        "/assets/*",
-        "/*.css",
-        "/*.js",
-        "/*.png",
-        "/*.jpg",
-        "/*.svg",
-        "/*.ico"
-      ]
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/static/*",
+      "/*.css",
+      "/*.js",
+      "/*.png",
+      "/*.jpg",
+      "/*.jpeg",
+      "/*.gif",
+      "/*.svg",
+      "/*.ico",
+      "/*.woff",
+      "/*.woff2",
+      "/*.ttf",
+      "/*.eot"
+    ]
+  },
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
     }
-  }
-  
+  ]
+}
