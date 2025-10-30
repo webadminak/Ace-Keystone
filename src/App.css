@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+
+@media screen and (max-width: 350px) {
+  
+  #about,
+  #services,
+  #features,
+  #testimonials,
+  #team,
+  #contact,
+  #footer,
+  #projects, 
+  #page-top,
+  #menu {
+    width: 100%;
+  }
+
+  
+
+  #portfolio {
+    width: 110%;
+  }
+}
+
+@media (min-width:350px) and (max-width: 425px) {
+  #about,
+  #services,
+  #features,
+  #testimonials,
+  #team,
+  #contact,
+  #footer,
+  #projects, 
+  #page-top,
+  #menu{
+    width: 100%;
+  }
+  #contact {
+    height: 1200px !important;
+  }
+}
+
+@media (min-width:1024px) and (max-width: 1054px) {
+
+  #contact{
+    height: 800px !important;
+  }
+  
+}
+@media (min-width:200px) and (max-width: 350px) {
+
+  #contact{
+    height: 1400px !important;
+  }
+  
+}
+
+@media (min-width:700px) and (max-width: 768px) {
+
+  #contact{
+    height: 1100px !important;
+  }
+  
+}
+
+
+
+
+@media (min-width:350px) and (max-width: 425px) {
+
+  #menu{
+    width: 100%;
+    position: fixed;
+  }
+  
+}
+@media (min-width:350px) and (max-width:425px) {
+  .intro h1{
+    font-size: 34px;
+    right: 0;
+    position: relative;
+    bottom: 20;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
+
+@media (min-width:200px) and (max-width:350px) {
+  .intro h1{
+    font-size: 24px;
+    right: 50px;
+    position: relative;
+    bottom: 20;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .hero-content p{
+    max-width: 300px !important;
+    right: 60px !important;
+  }
+  
+}
+
+
+
+@media (min-width:350px) and (max-width:425px) {
+  #features{
+    background: white;
+
+  }
+  
+}
+
+/* //// */
+
+@media (min-width: 426px) and (max-width: 430px) {
+  #about,
+  #services,
+  #features,
+  #testimonials,
+  #team,
+  #contact,
+  #footer,
+  #projects, 
+  #page-top,
+  #menu{
+    width: 100%;
+  }
+  
+}
+@media (min-width: 426px)  and (max-width: 430px) {
+
+  #menu{
+    width: 100%;
+    position: fixed;
+  }
+  
+}
+@media (min-width: 426px)  and (max-width:430px) {
+  .intro h1{
+    font-size: 39px;
+    right: 0;
+    position: relative;
+    bottom:40px;
+  }
+  
+}
+@media (min-width: 426px)  and (max-width:430px) {
+  #features{
+    background: white;
+    position: relative;
+    top: 200px;
+
+  }
+  #team{
+    position: relative;
+    top: 200px;
+
+  }
+  #contact{
+    position: relative;
+    top: 200px;
+
+  }
+  #footer{
+    position: relative;
+    top: 200px;
+
+  }
+}
+
+
+
+
+
+
+
+#darkmode-toggle {
+  display: none;
+}
+
+#darkmode-toggle + label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#darkmode-toggle + label:hover {
+  background-color: #e9ecef;
+}
+
+
+.sun,
+.moon {
+  width: 24px;
+  height: 24px;
+  fill: #343a40;
+}
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  transition: background-color 0.25s ease-in-out;
+}
+
+.title {
+  color: var(--primary-text-color);
+  margin-bottom: 50px;
+}
+
+.box {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--foreground-color);
+  color: var(--secondary-text-color);
+}
+
+.section-white {
+  background-image: url('./img/9019808.jpg'); /* Add your image path here */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the background image fixed */
+  background-size: cover; /* Makes the background cover the entire section */
+  padding: 70px 0;
+  height: 100vh; /* You can adjust this height as per your requirement */
+  overflow: auto; /* Makes the section scrollable */
+}
+
+.team-item{
+	background: #f4f5f6;
+	text-align:center;
+	margin:20px 0;
+	padding:50px 50px 40px 50px;
+	border-radius: 8px 8px;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+  min-height: 800px; /* Adjust as needed */
+
+}
+
+.team-item:hover{
+background-color: #0064e7;
+}
+@media (max-width: 1024px){
+.team-item{
+min-height: 950;
+}
+}
+
+.team-item h3{
+	margin:20px 0 10px 0!important;
+	color:#454545;
+	font-size:23px;
+	font-weight: 700;
+	text-transform:none;
+	transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	-webkit-transition: all .25s ease-in-out;
+}
+
+.section-subtitle {
+	white-space: pre-line;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  bottom: 25px;
+ }
+
+.team-item:hover h3{
+	color:#ffffff;
+}
+
+.team-info {
+	display: block;
+	margin-bottom:0;
+}
+
+.team-info p{
+	color:#acacac;
+	font-style:italic;
+}
+
+.team-info::after {
+    background: #008aff;
+    background: -webkit-linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
+    background: -o-linear-gradient(bottom right, #6B02FF, #985BEF);
+    background: -moz-linear-gradient(bottom right, #008aff, #1ad2fd);
+    background: linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    width: 50px;
+    height: 3px; 
+    bottom: 6px;
+    position: relative;
+}
+
+.team-img{
+	width: 250px;
+	padding: 6px 6px;
+    background-color: #dedede;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+ul.team-icon {
+	margin-top: 25px;
+}
+
+ul.team-icon li{
+	display: inline-block;
+	margin:0 3px;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+ul.team-icon li a{
+	margin: 0;
+	display: inline-block;
+	padding: 8px 8px;
+	width: 34px;
+	height: 34px;
+	font-size: 18px;
+	line-height: 18px;
+	background-color: #fff;
+	border-radius: 50%;
+	color:#fff;
+}
+
+ul.team-icon li a.twitter{
+	background-color: #4099ff;
+}
+
+ul.team-icon li a.pinterest{
+	background-color: #C92228;
+}
+
+ul.team-icon li a.facebook{
+	background-color: #3b5998;
+}
+
+ul.team-icon li a.dribble{
+	background-color: #ea4c89;
+}
+
+.team-icon li a:hover{
+	color:#dedede;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+.headings{
+  font-size: 36px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 45px;
+  padding-top: 30px;
+  display: grid;
+  position: relative;
+}
+
+#header {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro {
+  position: relative;
+  z-index: 3; /* Ensure text and content is above everything */
+}
+
+.image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures all images fit well */
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease-in-out;
+  overflow: hidden;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+  z-index: 2; /* Overlay should be above the background but below the text */
+  width: 100%;
+}
+
+.intro-text {
+  position: relative;
+  z-index: 3; /* Make sure the text is above the overlay */
+  color: white; /* Ensure text is visible against the background */
+  text-align: center;
+}
+
+/* iPhone SE, iPhone 8, iPhone 7 */
+@media only screen and (max-width: 375px) {
+  .about-text {
+    font-size: 16px; /* Example adjustment */
+    padding: 10px; /* Example adjustment */
+  }
+}
+
+/* iPhone 12 Mini, iPhone 13 Mini */
+@media only screen and (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+  .about-text {
+    font-size: 17px;
+  }
+}
+
+/* iPhone 11, iPhone XR */
+@media only screen and (max-width: 414px) {
+  .about-text {
+    font-size: 18px; /* Adjust font size */
+  }
+}
+
+/* iPhone 12, iPhone 13, iPhone 14 */
+@media only screen and (max-width: 390px) {
+  .about-text {
+    font-size: 18px;
+  }
+
+  .list-style {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align */
+  }
+}
+
+/* iPhone 14 Pro Max and larger screens */
+@media only screen and (max-width: 430px) {
+  .about-text {
+    font-size: 18px; /* Adjust as needed */
+  }
+}
+
+

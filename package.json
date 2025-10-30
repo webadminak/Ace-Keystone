@@ -1,0 +1,54 @@
+{
+  "name": "aktech-sample-website",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@material-tailwind/react": "^2.1.10",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "emailjs-com": "^2.6.4",
+    "framer-motion": "^12.23.12",
+    "gsap": "^3.13.0",
+    "hamburger-react": "^2.5.2",
+    "lottie-web": "^5.13.0",
+    "lucide-react": "^0.503.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.1",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.0.1",
+    "react-intersection-observer": "^9.16.0",
+    "react-router-dom": "^7.0.2",
+    "react-scripts": "^5.0.1",
+    "react-scroll": "^1.9.0",
+    "smooth-scroll": "^16.1.3",
+    "sweetalert2": "^11.19.1",
+    "use-local-storage": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

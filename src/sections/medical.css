@@ -1,0 +1,195 @@
+/* Container and base setup */
+.medical-container {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+    color: #111;
+}
+
+/* Banner with angled cut */
+.banner {
+    position: relative;
+    height: 75vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.65);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 25% 90%, 20% 100%, 0 100%);
+}
+
+.banner-title {
+    position: absolute;
+    bottom: 9rem;
+    left: 4rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    z-index: 2;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Accordion styles */
+.accordion-container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.accordion-title {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.accordion-subtext {
+    font-size: 16px;
+    color: #374151;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+.accordion-subtext:hover{
+    color: #374151;
+}
+
+.accordion-item {
+    margin-bottom: 1.8rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #111827;
+    transition: color 0.3s ease;
+}
+
+.accordion-header:hover {
+    color: #2563eb;
+}
+
+.arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9fafb;
+}
+
+.accordion-content {
+    font-size: 1.05rem;
+    color: #4b5563;
+    padding: 0 0 1rem 2.7rem;
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 1s ease;
+    line-height: 1.7;
+    opacity: 0;
+    max-height: 0;
+    padding-left: 3rem;
+}
+
+.accordion-content.open {
+    opacity: 1;
+    max-height: 500px; /* or whatever height you expect */
+  }
+
+.medical-content {
+    max-width: 1140px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.section-heading {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #111;
+}
+
+.section-subheading {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 3rem;
+    max-width: 900px;
+}
+
+.accordion {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.accordion-item {
+    border-top: 1px solid #ddd;
+    padding: 1.5rem 0;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    cursor: pointer;
+}
+
+.accordion-icon {
+    background: #f5f5f5;
+    border-radius: 50%;
+    padding: 0.4rem;
+    transition: transform 0.3s;
+}
+
+.accordion-icon.open {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    margin-top: 1rem;
+    padding-left: 2rem;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 850px;
+}
+
+.accordion-content p {
+    margin: 0;
+    line-height: 1.6;
+    color: #111;
+    position: relative;
+    top: 10px;
+    font-size: 16px;
+}
+
+.accordion-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    transition: color 0.3s ease;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: auto;
+    position: relative;
+    top: 10px;
+}
+.arrow-icon{
+    position: relative;
+    top: 10px;
+}
